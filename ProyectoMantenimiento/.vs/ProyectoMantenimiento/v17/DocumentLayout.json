@@ -3,6 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1CDEEF69-0284-4CE0-9671-4AA6CB5E893F}|..\\Persistencia\\Persistencia.csproj|c:\\users\\computer\\onedrive - universidad santo tom\u00E1s\\2025 i\\tecnicas lap\\persistencia\\migrations\\202504251929461_primera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CDEEF69-0284-4CE0-9671-4AA6CB5E893F}|..\\Persistencia\\Persistencia.csproj|c:\\users\\computer\\onedrive - universidad santo tom\u00E1s\\2025 i\\tecnicas lap\\persistencia\\migrations\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{11087C40-44AD-4764-BE7A-BD340724F650}|ProyectoMantenimiento.csproj|c:\\users\\computer\\onedrive - universidad santo tom\u00E1s\\2025 i\\tecnicas lap\\proyectomantenimiento\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11087C40-44AD-4764-BE7A-BD340724F650}|ProyectoMantenimiento.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -10,15 +16,18 @@
       "AbsoluteMoniker": "D:0:0:{1CDEEF69-0284-4CE0-9671-4AA6CB5E893F}|..\\Persistencia\\Persistencia.csproj|c:\\users\\computer\\onedrive - universidad santo tom\u00E1s\\2025 i\\tecnicas lap\\persistencia\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11087C40-44AD-4764-BE7A-BD340724F650}|ProyectoMantenimiento.csproj|c:\\users\\computer\\onedrive - universidad santo tom\u00E1s\\2025 i\\tecnicas lap\\proyectomantenimiento\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{11087C40-44AD-4764-BE7A-BD340724F650}|ProyectoMantenimiento.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{11087C40-44AD-4764-BE7A-BD340724F650}|ProyectoMantenimiento.csproj|c:\\users\\computer\\onedrive - universidad santo tom\u00E1s\\2025 i\\tecnicas lap\\proyectomantenimiento\\proyectomantenimiento.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{11087C40-44AD-4764-BE7A-BD340724F650}|ProyectoMantenimiento.csproj|solutionrelative:proyectomantenimiento.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45C36AEF-5068-4205-B3BC-BE91FB8DDD4E}|..\\Aplicacion\\Aplicacion.csproj|c:\\users\\computer\\onedrive - universidad santo tom\u00E1s\\2025 i\\tecnicas lap\\aplicacion\\servicios\\usuarioservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1CDEEF69-0284-4CE0-9671-4AA6CB5E893F}|..\\Persistencia\\Persistencia.csproj|c:\\users\\computer\\onedrive - universidad santo tom\u00E1s\\2025 i\\tecnicas lap\\persistencia\\persistencia.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11087C40-44AD-4764-BE7A-BD340724F650}|ProyectoMantenimiento.csproj|c:\\users\\computer\\onedrive - universidad santo tom\u00E1s\\2025 i\\tecnicas lap\\proyectomantenimiento\\proyectomantenimiento.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{11087C40-44AD-4764-BE7A-BD340724F650}|ProyectoMantenimiento.csproj|solutionrelative:proyectomantenimiento.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{11087C40-44AD-4764-BE7A-BD340724F650}|ProyectoMantenimiento.csproj|c:\\users\\computer\\onedrive - universidad santo tom\u00E1s\\2025 i\\tecnicas lap\\proyectomantenimiento\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{11087C40-44AD-4764-BE7A-BD340724F650}|ProyectoMantenimiento.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{45C36AEF-5068-4205-B3BC-BE91FB8DDD4E}|..\\Aplicacion\\Aplicacion.csproj|c:\\users\\computer\\onedrive - universidad santo tom\u00E1s\\2025 i\\tecnicas lap\\aplicacion\\aplicacion.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
@@ -33,9 +42,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{11087C40-44AD-4764-BE7A-BD340724F650}|ProyectoMantenimiento.csproj|c:\\users\\computer\\onedrive - universidad santo tom\u00E1s\\2025 i\\tecnicas lap\\proyectomantenimiento\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{11087C40-44AD-4764-BE7A-BD340724F650}|ProyectoMantenimiento.csproj|solutionrelative:views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45C36AEF-5068-4205-B3BC-BE91FB8DDD4E}|..\\Aplicacion\\Aplicacion.csproj|c:\\users\\computer\\onedrive - universidad santo tom\u00E1s\\2025 i\\tecnicas lap\\aplicacion\\servicios\\usuarioservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11087C40-44AD-4764-BE7A-BD340724F650}|ProyectoMantenimiento.csproj|c:\\users\\computer\\onedrive - universidad santo tom\u00E1s\\2025 i\\tecnicas lap\\proyectomantenimiento\\views\\login\\crearempleado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -113,12 +119,38 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Persistencia",
+              "DocumentIndex": 0,
+              "Title": "202504251929461_Primera.cs",
+              "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Persistencia\\Migrations\\202504251929461_Primera.cs",
+              "RelativeDocumentMoniker": "..\\Persistencia\\Migrations\\202504251929461_Primera.cs",
+              "ToolTip": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Persistencia\\Migrations\\202504251929461_Primera.cs",
+              "RelativeToolTip": "..\\Persistencia\\Migrations\\202504251929461_Primera.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAIwCoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T19:29:46.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Configuration.cs",
+              "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Persistencia\\Migrations\\Configuration.cs",
+              "RelativeDocumentMoniker": "..\\Persistencia\\Migrations\\Configuration.cs",
+              "ToolTip": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Persistencia\\Migrations\\Configuration.cs",
+              "RelativeToolTip": "..\\Persistencia\\Migrations\\Configuration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T19:29:13.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Persistencia.csproj",
               "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Persistencia\\Persistencia.csproj",
               "RelativeDocumentMoniker": "..\\Persistencia\\Persistencia.csproj",
               "ToolTip": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Persistencia\\Persistencia.csproj",
@@ -130,72 +162,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Aplicacion",
-              "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Aplicacion\\Aplicacion.csproj",
-              "RelativeDocumentMoniker": "..\\Aplicacion\\Aplicacion.csproj",
-              "ToolTip": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Aplicacion\\Aplicacion.csproj",
-              "RelativeToolTip": "..\\Aplicacion\\Aplicacion.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-25T18:47:07.412Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IUsuarioServicio.cs",
-              "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Aplicacion\\Servicios\\IUsuarioServicio.cs",
-              "RelativeDocumentMoniker": "..\\Aplicacion\\Servicios\\IUsuarioServicio.cs",
-              "ToolTip": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Aplicacion\\Servicios\\IUsuarioServicio.cs",
-              "RelativeToolTip": "..\\Aplicacion\\Servicios\\IUsuarioServicio.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T18:34:31.551Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAcwBoAAAAaAAAA",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAcwBIAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-25T01:13:12.313Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Persistencia\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "..\\Persistencia\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Persistencia\\ApplicationDbContext.cs",
-              "RelativeToolTip": "..\\Persistencia\\ApplicationDbContext.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T17:45:45.068Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-25T01:57:52.243Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\Views\\Login\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Login\\Index.cshtml",
@@ -203,18 +183,17 @@
               "RelativeToolTip": "Views\\Login\\Index.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-25T01:37:31.474Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T01:37:31.474Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 5,
               "Title": "UsuarioServicio.cs",
               "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Aplicacion\\Servicios\\UsuarioServicio.cs",
               "RelativeDocumentMoniker": "..\\Aplicacion\\Servicios\\UsuarioServicio.cs",
               "ToolTip": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Aplicacion\\Servicios\\UsuarioServicio.cs",
               "RelativeToolTip": "..\\Aplicacion\\Servicios\\UsuarioServicio.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAswBsAAAAzAAAA",
+              "ViewState": "AQIAABsAAAAAAAAAAAAswCcAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-25T17:17:32.11Z",
               "EditorCaption": ""
@@ -227,14 +206,64 @@
               "RelativeDocumentMoniker": "ProyectoMantenimiento.csproj",
               "ToolTip": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\ProyectoMantenimiento.csproj",
               "RelativeToolTip": "ProyectoMantenimiento.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-04-25T01:13:26.646Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Persistencia\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "..\\Persistencia\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Persistencia\\ApplicationDbContext.cs",
+              "RelativeToolTip": "..\\Persistencia\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T17:45:45.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-25T01:57:52.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IUsuarioServicio.cs",
+              "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Aplicacion\\Servicios\\IUsuarioServicio.cs",
+              "RelativeDocumentMoniker": "..\\Aplicacion\\Servicios\\IUsuarioServicio.cs",
+              "ToolTip": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Aplicacion\\Servicios\\IUsuarioServicio.cs",
+              "RelativeToolTip": "..\\Aplicacion\\Servicios\\IUsuarioServicio.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T18:34:31.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Aplicacion.csproj",
+              "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Aplicacion\\Aplicacion.csproj",
+              "RelativeDocumentMoniker": "..\\Aplicacion\\Aplicacion.csproj",
+              "ToolTip": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Aplicacion\\Aplicacion.csproj",
+              "RelativeToolTip": "..\\Aplicacion\\Aplicacion.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-25T18:47:07.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
@@ -242,12 +271,11 @@
               "RelativeToolTip": "Controllers\\LoginController.cs",
               "ViewState": "AQIAADUAAAAAAAAAAAASwEkAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T01:35:45.358Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T01:35:45.358Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "RegistroDto.cs",
               "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Aplicacion\\DTOs\\RegistroDto.cs",
               "RelativeDocumentMoniker": "..\\Aplicacion\\DTOs\\RegistroDto.cs",
@@ -255,12 +283,11 @@
               "RelativeToolTip": "..\\Aplicacion\\DTOs\\RegistroDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAADwvwwAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T17:16:10.055Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T17:16:10.055Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "CrearEmpleado.cshtml",
               "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\Views\\Login\\CrearEmpleado.cshtml",
               "RelativeDocumentMoniker": "Views\\Login\\CrearEmpleado.cshtml",
@@ -268,12 +295,11 @@
               "RelativeToolTip": "Views\\Login\\CrearEmpleado.cshtml",
               "ViewState": "AQIAADQAAAAAAAAAAAAuwEEAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-25T01:46:23.39Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T01:46:23.39Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Dominio\\Entidades\\Usuario.cs",
               "RelativeDocumentMoniker": "..\\Dominio\\Entidades\\Usuario.cs",
@@ -281,12 +307,11 @@
               "RelativeToolTip": "..\\Dominio\\Entidades\\Usuario.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T17:44:18.149Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T17:44:18.149Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "LoginDto.cs",
               "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\Aplicacion\\DTOs\\LoginDto.cs",
               "RelativeDocumentMoniker": "..\\Aplicacion\\DTOs\\LoginDto.cs",
@@ -294,12 +319,11 @@
               "RelativeToolTip": "..\\Aplicacion\\DTOs\\LoginDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T17:44:49.749Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T17:44:49.749Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "UsuarioServicio.cs",
               "DocumentMoniker": "C:\\Users\\Felip\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Aplicacion\\Servicios\\UsuarioServicio.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Felip\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Aplicacion\\Servicios\\UsuarioServicio.cs",
@@ -310,7 +334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "IUsuarioServicio.cs",
               "DocumentMoniker": "C:\\Users\\Felip\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Aplicacion\\Servicios\\IUsuarioServicio.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Felip\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Aplicacion\\Servicios\\IUsuarioServicio.cs",
@@ -321,7 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "_LoginLayout.cshtml",
               "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\Views\\Shared\\_LoginLayout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_LoginLayout.cshtml",
@@ -329,12 +353,11 @@
               "RelativeToolTip": "Views\\Shared\\_LoginLayout.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-25T03:09:45.05Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T03:09:45.05Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "LoginDto.cs",
               "DocumentMoniker": "C:\\Users\\Felip\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Aplicacion\\DTOs\\LoginDto.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Felip\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Aplicacion\\DTOs\\LoginDto.cs",
@@ -345,7 +368,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "RegistroDto.cs",
               "DocumentMoniker": "C:\\Users\\Felip\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Aplicacion\\DTOs\\RegistroDto.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Felip\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Aplicacion\\DTOs\\RegistroDto.cs",
@@ -356,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "_MainMenu.cshtml",
               "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\Views\\Shared\\_MainMenu.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_MainMenu.cshtml",
@@ -364,12 +387,11 @@
               "RelativeToolTip": "Views\\Shared\\_MainMenu.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-25T03:11:02.059Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T03:11:02.059Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
@@ -377,12 +399,11 @@
               "RelativeToolTip": "Views\\_ViewImports.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-25T03:12:25.611Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T03:12:25.611Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -390,12 +411,11 @@
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-25T01:47:05.967Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T01:47:05.967Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "_MainHeader.cshtml",
               "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\Views\\Shared\\_MainHeader.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_MainHeader.cshtml",
@@ -403,12 +423,11 @@
               "RelativeToolTip": "Views\\Shared\\_MainHeader.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-25T03:11:14.952Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T03:11:14.952Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
@@ -416,12 +435,11 @@
               "RelativeToolTip": "Views\\_ViewStart.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-25T03:12:16.413Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T03:12:16.413Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Felip\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Persistencia\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Felip\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Persistencia\\ApplicationDbContext.cs",
@@ -432,7 +450,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\Felip\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Dominio\\Entidades\\Usuario.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Felip\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Dominio\\Entidades\\Usuario.cs",
@@ -443,7 +461,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "Dominio.csproj",
               "DocumentMoniker": "C:\\Users\\Felip\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Dominio\\Dominio.csproj",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Felip\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Dominio\\Dominio.csproj",
@@ -454,7 +472,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "Aplicacion.csproj",
               "DocumentMoniker": "C:\\Users\\Felip\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Aplicacion\\Aplicacion.csproj",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Felip\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Aplicacion\\Aplicacion.csproj",
@@ -465,7 +483,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "Persistencia.csproj",
               "DocumentMoniker": "C:\\Users\\Felip\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Persistencia\\Persistencia.csproj",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Felip\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Persistencia\\Persistencia.csproj",
@@ -476,7 +494,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "ProyectoMantenimiento",
               "DocumentMoniker": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tom\u00E1s\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\ProyectoMantenimiento.csproj",
               "RelativeDocumentMoniker": "ProyectoMantenimiento.csproj",

@@ -2508,6 +2508,7 @@
     "net8.0": [
       "Aplicacion >= 1.0.0",
       "Dominio >= 1.0.0",
+      "EntityFramework >= 6.5.1",
       "Persistencia >= 1.0.0"
     ]
   },
@@ -2565,6 +2566,12 @@
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
+        "dependencies": {
+          "EntityFramework": {
+            "target": "Package",
+            "version": "[6.5.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

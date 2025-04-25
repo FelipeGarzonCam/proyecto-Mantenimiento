@@ -89,12 +89,3 @@ C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimie
 C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\ProyectoMantenimiento\obj\Debug\net8.0\ProyectoMantenimiento.pdb
 C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\ProyectoMantenimiento\obj\Debug\net8.0\ProyectoMantenimiento.genruntimeconfig.cache
 C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\ProyectoMantenimiento\obj\Debug\net8.0\ref\ProyectoMantenimiento.dll
-C:\Users\Computer\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\ProyectoMantenimiento\obj\Debug\net8.0\ProyectoMantenimiento.csproj.AssemblyReference.cache
-C:\Users\Computer\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\ProyectoMantenimiento\obj\Debug\net8.0\ProyectoMantenimiento.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Computer\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\ProyectoMantenimiento\obj\Debug\net8.0\ProyectoMantenimiento.AssemblyInfoInputs.cache
-C:\Users\Computer\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\ProyectoMantenimiento\obj\Debug\net8.0\ProyectoMantenimiento.AssemblyInfo.cs
-C:\Users\Computer\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\ProyectoMantenimiento\obj\Debug\net8.0\ProyectoMantenimiento.csproj.CoreCompileInputs.cache
-C:\Users\Computer\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\ProyectoMantenimiento\obj\Debug\net8.0\ProyectoMantenimiento.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Computer\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\ProyectoMantenimiento\obj\Debug\net8.0\ProyectoMantenimiento.RazorAssemblyInfo.cache
-C:\Users\Computer\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\ProyectoMantenimiento\obj\Debug\net8.0\ProyectoMantenimiento.RazorAssemblyInfo.cs
-C:\Users\Computer\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\ProyectoMantenimiento\obj\Debug\net8.0\ProyectoMantenimiento.sourcelink.json

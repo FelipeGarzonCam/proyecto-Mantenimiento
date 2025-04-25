@@ -1,48 +1,30 @@
-using Microsoft.AspNetCore.Identity;
-using ProyectoMantenimiento.Aplicacion.Servicios;
-using ProyectoMantenimiento.Dominio.Entidades;
-using ProyectoMantenimiento.Persistencia;
+// Program.cs
+using System;
+using System.Data.Entity;                                        // Namespace de EF6
+using Microsoft.AspNetCore.Builder;                              // Builder de Minimal APIs
+using Microsoft.Extensions.Configuration;                        // Configuración
+using Microsoft.Extensions.DependencyInjection;                  // DI
+using Microsoft.Extensions.Hosting;                              // Hosting
+using ProyectoMantenimiento.Persistencia;                        // Tu contexto EF6
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
+// 1. Leer cadena de conexión desde appsettings.json
+var connectionString = builder.Configuration
+    .GetConnectionString("DefaultConnection");
 
-// Add DbContext
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-// Add Identity
-builder.Services.AddIdentity<Usuario, IdentityRole>(options => {
-    // Password settings
-    options.Password.RequireDigit = true;
-    options.Password.RequireLowercase = true;
-    options.Password.RequireUppercase = true;
-    options.Password.RequireNonAlphanumeric = true;
-    options.Password.RequiredLength = 6;
-
-    // User settings
-    options.User.RequireUniqueEmail = false; // Set to true if you want to use email
-})
-.AddEntityFrameworkStores<AppDbContext>()
-.AddDefaultTokenProviders();
-
-// Configure cookie settings
-builder.Services.ConfigureApplicationCookie(options => {
-    options.Cookie.HttpOnly = true;
-    options.ExpireTimeSpan = TimeSpan.FromDays(7);
-    options.LoginPath = "/Login";
-    options.LogoutPath = "/Login/Logout";
-    options.AccessDeniedPath = "/Login";
-    options.SlidingExpiration = true;
+/// En Program.cs
+builder.Services.AddScoped<AppDbContext>(provider => {
+    return new AppDbContext(); // Usa el constructor sin parámetros
 });
 
-// Register application services
-builder.Services.AddScoped<IUsuarioServicio, UsuarioServicio>();
+// 3. Añadir soporte a MVC (controladores y vistas)
+builder.Services.AddControllersWithViews();
 
+// Construir la app
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// 4. Configurar middleware estándar
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -51,14 +33,13 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
 
-app.UseAuthentication();
-app.UseAuthorization();
-
+// 5. Rutas por defecto de MVC
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Login}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}"
+);
 
+// 6. Ejecutar la aplicación
 app.Run();

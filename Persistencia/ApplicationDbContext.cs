@@ -1,18 +1,29 @@
-﻿using System.Data.Entity;
+﻿
+using System;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using ProyectoMantenimiento.Dominio.Entidades;
 
 namespace ProyectoMantenimiento.Persistencia
 {
-    public class SistemaQuickTableContext : DbContext
+    public class AppDbContext : DbContext
     {
-        static string connectionString =
+        // Mantener la conexión hardcodeada para compatibilidad
+        private static readonly string defaultConnectionString =
             "Server=localhost;" +
             "Database=ProyectoMantenimiento;" +
-            "Trusted_Connection=True;"; //chinga tu madre
+            "Trusted_Connection=True;";
 
-        public SistemaQuickTableContext() : base(connectionString)
+        // Constructor sin parámetros para compatibilidad
+        public AppDbContext() : base(defaultConnectionString)
         {
         }
+
+        // Constructor que acepta una cadena de conexión
+        public AppDbContext(string connectionString) : base(connectionString)
+        {
+        }
+
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }
