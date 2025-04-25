@@ -31,6 +31,9 @@
             "projectReferences": {
               "C:\\Users\\Computer\\OneDrive - Universidad Santo Tomás\\2025 i\\Tecnicas Lap\\Dominio\\Dominio.csproj": {
                 "projectPath": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tomás\\2025 i\\Tecnicas Lap\\Dominio\\Dominio.csproj"
+              },
+              "C:\\Users\\Computer\\OneDrive - Universidad Santo Tomás\\2025 i\\Tecnicas Lap\\Persistencia\\Persistencia.csproj": {
+                "projectPath": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tomás\\2025 i\\Tecnicas Lap\\Persistencia\\Persistencia.csproj"
               }
             }
           }
@@ -192,17 +195,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+            "EntityFramework": {
               "target": "Package",
-              "version": "[8.0.4, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[8.0.4, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[6.5.1, )"
             }
           },
           "imports": [
@@ -276,24 +271,6 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[8.0.4, )"
-            },
-            "Microsoft.AspNetCore.Identity.UI": {
-              "target": "Package",
-              "version": "[8.0.4, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[8.0.4, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[8.0.4, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

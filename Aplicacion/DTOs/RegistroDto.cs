@@ -10,8 +10,6 @@ namespace ProyectoMantenimiento.Aplicacion.DTOs
         [Required(ErrorMessage = "La contraseña es obligatoria")]
         [StringLength(100, ErrorMessage = "La {0} debe tener al menos {2} caracteres.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        public string Password { get; set; }
-
-        public string LogoUrl { get; set; }
+        public string Password { get; set; }       
     }
 }

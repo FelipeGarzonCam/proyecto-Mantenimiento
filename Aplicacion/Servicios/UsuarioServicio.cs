@@ -30,7 +30,7 @@ namespace ProyectoMantenimiento.Aplicacion.Servicios
             var usuario = new Usuario
             {
                 UserName = registroDto.UserName,
-                LogoUrl = registroDto.LogoUrl
+                
             };
 
             var resultado = await _userManager.CreateAsync(usuario, registroDto.Password);
@@ -47,5 +47,6 @@ namespace ProyectoMantenimiento.Aplicacion.Servicios
         {
             await _signInManager.SignOutAsync();
         }
+       
     }
 }

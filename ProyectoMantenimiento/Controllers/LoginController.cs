@@ -55,56 +55,24 @@ namespace ProyectoMantenimiento.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(RegistroDto modelo, IFormFile LogoFile)
-        {
+          [ValidateAntiForgeryToken]
+          public async Task<IActionResult> Register(RegistroDto modelo)
+          {
             if (!ModelState.IsValid)
             {
-                ViewData["ShowRegisterModal"] = true;
-                return View("Index", new LoginDto());
+              ViewData["ShowRegisterModal"] = true;
+              return View("Index");
             }
-
-            // Handle file upload if there is one
-            if (LogoFile != null && LogoFile.Length > 0)
-            {
-                // Create uploads directory if it doesn't exist
-                string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "uploads", "logos");
-                if (!Directory.Exists(uploadsFolder))
-                {
-                    Directory.CreateDirectory(uploadsFolder);
-                }
-
-                // Generate unique filename
-                string uniqueFileName = Guid.NewGuid().ToString() + "_" + LogoFile.FileName;
-                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-
-                // Save the file
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
-                {
-                    await LogoFile.CopyToAsync(fileStream);
-                }
-
-                // Update model with the relative path
-                modelo.LogoUrl = "/uploads/logos/" + uniqueFileName;
-            }
-            else
-            {
-                // Set default logo path
-                modelo.LogoUrl = "/images/default-logo.png";
-            }
-
             var resultado = await _usuarioServicio.RegistrarAsync(modelo);
             if (resultado.Succeeded)
             {
-                TempData["RegisterSuccess"] = "Usuario registrado correctamente.";
-                return RedirectToAction("Index");
+              TempData["RegisterSuccess"] = "Registro exitoso";
+              return RedirectToAction("Index");
             }
-
-            foreach (var error in resultado.Errors)
-                ModelState.AddModelError(string.Empty, error.Description);
-
+            foreach (var err in resultado.Errors)
+            ModelState.AddModelError(string.Empty, err.Description);
             ViewData["ShowRegisterModal"] = true;
-            return View("Index", new LoginDto());
-        }
+            return View("Index");
+          }
     }
 }
