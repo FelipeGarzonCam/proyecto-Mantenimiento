@@ -1,13 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity;
-using ProyectoMantenimiento.Aplicacion.DTOs;
+﻿using ProyectoMantenimiento.Aplicacion.DTOs;
 using System.Threading.Tasks;
 
 namespace ProyectoMantenimiento.Aplicacion.Servicios
 {
     public interface IUsuarioServicio
     {
-        Task<SignInResult> LoginAsync(LoginDto loginDto);
-        Task<IdentityResult> RegistrarAsync(RegistroDto registroDto);
+        Task<bool> LoginAsync(LoginDto loginDto);
+        Task<bool> RegistrarAsync(RegistroDto registroDto);
         Task LogoutAsync();
     }
 }

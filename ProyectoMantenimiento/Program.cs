@@ -1,45 +1,44 @@
-// Program.cs
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using ProyectoMantenimiento.Persistencia;             // tu AppDbContext EF 6
+using ProyectoMantenimiento.Aplicacion.Servicios;     // IUsuarioServicio y UsuarioServicio
 using System;
-using System.Data.Entity;                                        // Namespace de EF6
-using Microsoft.AspNetCore.Builder;                              // Builder de Minimal APIs
-using Microsoft.Extensions.Configuration;                        // Configuración
-using Microsoft.Extensions.DependencyInjection;                  // DI
-using Microsoft.Extensions.Hosting;                              // Hosting
-using ProyectoMantenimiento.Persistencia;                        // Tu contexto EF6
+using Microsoft.AspNetCore.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. Leer cadena de conexión desde appsettings.json
-var connectionString = builder.Configuration
-    .GetConnectionString("DefaultConnection");
-
-/// En Program.cs
-builder.Services.AddScoped<AppDbContext>(provider => {
-    return new AppDbContext(); // Usa el constructor sin parámetros
-});
-
-// 3. Añadir soporte a MVC (controladores y vistas)
+// 1. MVC
 builder.Services.AddControllersWithViews();
 
-// Construir la app
-var app = builder.Build();
+// 2. Registra AppDbContext (EF 6) con lifetime por petición
+builder.Services.AddScoped<AppDbContext>(_ =>
+    new AppDbContext(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// 4. Configurar middleware estándar
-if (!app.Environment.IsDevelopment())
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
 {
-    app.UseExceptionHandler("/Home/Error");
-    app.UseHsts();
-}
+    options.IdleTimeout = TimeSpan.FromMinutes(120);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
+// 3. Registra tu servicio de usuario (sin SignInManager ni UserManager)
+builder.Services.AddScoped<IUsuarioServicio, UsuarioServicio>();
+// :contentReference[oaicite:5]{index=5}
+
+var app = builder.Build();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
-// 5. Rutas por defecto de MVC
+app.UseSession();
+
+
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}"
-);
+    pattern: "{controller=Login}/{action=Index}/{id?}");  // default al Login
+// :contentReference[oaicite:6]{index=6}
 
-// 6. Ejecutar la aplicación
 app.Run();

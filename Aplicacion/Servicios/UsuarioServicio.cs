@@ -1,52 +1,46 @@
-﻿using Microsoft.AspNetCore.Identity;
-using ProyectoMantenimiento.Aplicacion.DTOs;
+﻿using ProyectoMantenimiento.Aplicacion.DTOs;
 using ProyectoMantenimiento.Dominio.Entidades;
+using ProyectoMantenimiento.Persistencia;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace ProyectoMantenimiento.Aplicacion.Servicios
 {
     public class UsuarioServicio : IUsuarioServicio
     {
-        private readonly SignInManager<Usuario> _signInManager;
-        private readonly UserManager<Usuario> _userManager;
+        private readonly AppDbContext _db;
 
-        public UsuarioServicio(SignInManager<Usuario> signInManager, UserManager<Usuario> userManager)
+        public UsuarioServicio(AppDbContext db)
         {
-            _signInManager = signInManager;
-            _userManager = userManager;
+            _db = db;
         }
 
-        public async Task<SignInResult> LoginAsync(LoginDto loginDto)
+        public Task<bool> LoginAsync(LoginDto loginDto)
         {
-            return await _signInManager.PasswordSignInAsync(
-                loginDto.UserName,
-                loginDto.Password,
-                isPersistent: true,
-                lockoutOnFailure: false);
+            bool existe = _db.Usuarios
+                .Any(u => u.UserName == loginDto.UserName
+                       && u.Password == loginDto.Password);
+            return Task.FromResult(existe);
         }
 
-        public async Task<IdentityResult> RegistrarAsync(RegistroDto registroDto)
+        public Task<bool> RegistrarAsync(RegistroDto registroDto)
         {
             var usuario = new Usuario
             {
                 UserName = registroDto.UserName,
-                
+                Password = registroDto.Password
             };
 
-            var resultado = await _userManager.CreateAsync(usuario, registroDto.Password);
+            _db.Usuarios.Add(usuario);
+            _db.SaveChanges();
 
-            if (resultado.Succeeded)
-            {
-                await _signInManager.SignInAsync(usuario, isPersistent: true);
-            }
-
-            return resultado;
+            return Task.FromResult(true);
         }
 
-        public async Task LogoutAsync()
+        public Task LogoutAsync()
         {
-            await _signInManager.SignOutAsync();
+            // Implementa la lógica de cierre de sesión según tus necesidades
+            return Task.CompletedTask;
         }
-       
     }
 }

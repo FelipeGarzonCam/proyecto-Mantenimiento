@@ -1,18 +1,20 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProyectoMantenimiento.Dominio.Entidades
 {
-    public class Usuario : IdentityUser
+    public class Usuario
     {
-        // Propiedad existente
-        public string LogoUrl { get; set; }
+        [Key]
+        public int Id { get; set; }                      // PK por convención :contentReference[oaicite:4]{index=4}
 
-        // Propiedades adicionales que podrías necesitar
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }   
+        [Required]
+        [MaxLength(256)]
+        public string UserName { get; set; }             // Nombre de usuario :contentReference[oaicite:5]{index=5}
 
-        
+        [Required]
+        public string Password { get; set; }             // Contraseña en texto plano :contentReference[oaicite:6]{index=6}
     }
 }

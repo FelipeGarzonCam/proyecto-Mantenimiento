@@ -26,25 +26,24 @@ namespace ProyectoMantenimiento.Controllers
             return View();
         }
 
-        // POST: /Login
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Index(LoginDto modelo)
+        public async Task<IActionResult> Index(LoginDto model)
         {
             if (!ModelState.IsValid)
-            {
-                return View(modelo);
-            }
+                return View(model);
 
-            var resultado = await _usuarioServicio.LoginAsync(modelo);
-            if (resultado.Succeeded)
+            bool loginExitoso = await _usuarioServicio.LoginAsync(model);
+
+            if (loginExitoso)
             {
+                HttpContext.Session.SetString("Usuario", model.UserName);
                 return RedirectToAction("Index", "Home");
             }
 
-            TempData["LoginError"] = "Usuario o contraseña inválidos";
-            return RedirectToAction("Index");
+            ModelState.AddModelError("", "Usuario o contraseña incorrectos.");
+            return View(model);
         }
+
 
         // GET: /Login/Logout
         [HttpGet]
@@ -55,24 +54,27 @@ namespace ProyectoMantenimiento.Controllers
         }
 
         [HttpPost]
-          [ValidateAntiForgeryToken]
-          public async Task<IActionResult> Register(RegistroDto modelo)
-          {
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegistroDto modelo)
+        {
             if (!ModelState.IsValid)
             {
-              ViewData["ShowRegisterModal"] = true;
-              return View("Index");
+                ViewData["ShowRegisterModal"] = true;
+                return View("Index");
             }
-            var resultado = await _usuarioServicio.RegistrarAsync(modelo);
-            if (resultado.Succeeded)
+
+            bool registroExitoso = await _usuarioServicio.RegistrarAsync(modelo);
+
+            if (registroExitoso)
             {
-              TempData["RegisterSuccess"] = "Registro exitoso";
-              return RedirectToAction("Index");
+                TempData["RegisterSuccess"] = "Registro exitoso";
+                return RedirectToAction("Index");
             }
-            foreach (var err in resultado.Errors)
-            ModelState.AddModelError(string.Empty, err.Description);
+
+            ModelState.AddModelError(string.Empty, "Error al registrar el usuario.");
             ViewData["ShowRegisterModal"] = true;
             return View("Index");
-          }
+        }
+
     }
 }
