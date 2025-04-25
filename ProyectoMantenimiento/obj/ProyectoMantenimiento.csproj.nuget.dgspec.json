@@ -34,9 +34,6 @@
             "projectReferences": {
               "C:\\Users\\Felip\\OneDrive - Universidad Santo Tomás\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Dominio\\Dominio.csproj": {
                 "projectPath": "C:\\Users\\Felip\\OneDrive - Universidad Santo Tomás\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Dominio\\Dominio.csproj"
-              },
-              "C:\\Users\\Felip\\OneDrive - Universidad Santo Tomás\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Persistencia\\Persistencia.csproj": {
-                "projectPath": "C:\\Users\\Felip\\OneDrive - Universidad Santo Tomás\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Persistencia\\Persistencia.csproj"
               }
             }
           }
@@ -56,6 +53,16 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -121,6 +128,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -191,13 +204,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[8.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[8.0.4, )"
             }
           },
           "imports": [
@@ -253,6 +270,9 @@
               },
               "C:\\Users\\Felip\\OneDrive - Universidad Santo Tomás\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Dominio\\Dominio.csproj": {
                 "projectPath": "C:\\Users\\Felip\\OneDrive - Universidad Santo Tomás\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Dominio\\Dominio.csproj"
+              },
+              "C:\\Users\\Felip\\OneDrive - Universidad Santo Tomás\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Persistencia\\Persistencia.csproj": {
+                "projectPath": "C:\\Users\\Felip\\OneDrive - Universidad Santo Tomás\\2025 i\\Tecnicas De Mantenimiento\\Proyecto\\Persistencia\\Persistencia.csproj"
               }
             }
           }
@@ -273,13 +293,21 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.*, )"
+              "version": "[8.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.*, )"
+              "version": "[8.0.4, )"
             }
           },
           "imports": [

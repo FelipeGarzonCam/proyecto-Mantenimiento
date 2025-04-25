@@ -1,33 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
-using Dominio.Entidades;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ProyectoMantenimiento.Dominio.Entidades;
 
 namespace ProyectoMantenimiento.Persistencia
 {
-    public class SistemaQuickTableContext : DbContext
+    public class AppDbContext : IdentityDbContext<Usuario>
     {
-        public static string ConnectionString =
-            "Server=localhost;" +
-            "Database=ProyectoMantenimientoDB;" +
-            "Trusted_Connection=True;";
-
-        public SistemaQuickTableContext(DbContextOptions<SistemaQuickTableContext> options)
-            : base(options) { }
-
-        // DbSet para usuarios
-        public DbSet<Usuario> Usuarios { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer(ConnectionString);
-            }
         }
+
+        // Aquí puedes agregar tus DbSet para otras entidades
     }
 }

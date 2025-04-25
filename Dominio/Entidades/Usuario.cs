@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 
-namespace Dominio.Entidades
+
+namespace ProyectoMantenimiento.Dominio.Entidades
 {
     public class Usuario : IdentityUser
     {

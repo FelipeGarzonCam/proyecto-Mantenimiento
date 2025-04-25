@@ -1,0 +1,13 @@
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Dominio\bin\Debug\net8.0\Dominio.deps.json
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Dominio\bin\Debug\net8.0\Dominio.dll
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Dominio\bin\Debug\net8.0\Dominio.pdb
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Dominio\obj\Debug\net8.0\Dominio.csproj.AssemblyReference.cache
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Dominio\obj\Debug\net8.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfoInputs.cache
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfo.cs
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Dominio\obj\Debug\net8.0\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Dominio\obj\Debug\net8.0\Dominio.sourcelink.json
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Dominio\obj\Debug\net8.0\Dominio.dll
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Dominio\obj\Debug\net8.0\refint\Dominio.dll
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Dominio\obj\Debug\net8.0\Dominio.pdb
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Dominio\obj\Debug\net8.0\ref\Dominio.dll

@@ -5,15 +5,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aplicacion.DTOs
+namespace ProyectoMantenimiento.Aplicacion.DTOs
 {
     public class RegistroDto
     {
-        [Required] public string UserName { get; set; }
-        [Required, EmailAddress] public string Email { get; set; }
-        [Required, DataType(DataType.Password)] public string Password { get; set; }
-        [Compare("Password"), DataType(DataType.Password)] public string ConfirmPassword { get; set; }
-        // Logo opcional
+        [Required(ErrorMessage = "El usuario es obligatorio")]
+        public string UserName { get; set; }
+
+        [Required(ErrorMessage = "El correo es obligatorio")]
+        [EmailAddress(ErrorMessage = "Formato de correo inválido")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "La contraseña es obligatoria")]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+
         public string LogoUrl { get; set; }
     }
 }

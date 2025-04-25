@@ -5,11 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aplicacion.DTOs
+namespace ProyectoMantenimiento.Aplicacion.DTOs
 {
     public class LoginDto
     {
-        [Required] public string UserName { get; set; }
-        [Required, DataType(DataType.Password)] public string Password { get; set; }
+        [Required(ErrorMessage = "El usuario es obligatorio")]
+        public string UserName { get; set; }
+
+        [Required(ErrorMessage = "La contraseña es obligatoria")]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
     }
 }

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Microsoft.AspNetCore.Identity;
+using ProyectoMantenimiento.Aplicacion.DTOs;
+using ProyectoMantenimiento.Dominio.Entidades;
 using System.Threading.Tasks;
-using Dominio.Entidades;
-using Aplicacion.DTOs;
-using ProyectoMantenimiento.Aplicacion.Servicios;
 
-namespace Aplicacion.Servicios
+namespace ProyectoMantenimiento.Aplicacion.Servicios
 {
     public class UsuarioServicio : IUsuarioServicio
     {
@@ -20,8 +16,14 @@ namespace Aplicacion.Servicios
             _userManager = userManager;
         }
 
-        public async Task<SignInResult> LoginAsync(LoginDto loginDto) =>
-            await _signInManager.PasswordSignInAsync(loginDto.UserName, loginDto.Password, true, false);
+        public async Task<SignInResult> LoginAsync(LoginDto loginDto)
+        {
+            return await _signInManager.PasswordSignInAsync(
+                loginDto.UserName,
+                loginDto.Password,
+                isPersistent: true,
+                lockoutOnFailure: false);
+        }
 
         public async Task<IdentityResult> RegistrarAsync(RegistroDto registroDto)
         {
@@ -31,10 +33,13 @@ namespace Aplicacion.Servicios
                 Email = registroDto.Email,
                 LogoUrl = registroDto.LogoUrl
             };
+
             return await _userManager.CreateAsync(usuario, registroDto.Password);
         }
 
-        public async Task LogoutAsync() =>
+        public async Task LogoutAsync()
+        {
             await _signInManager.SignOutAsync();
+        }
     }
 }

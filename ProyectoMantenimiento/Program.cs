@@ -1,48 +1,58 @@
-using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using Aplicacion.DTOs;
-using Aplicacion.Servicios;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using ProyectoMantenimiento.Aplicacion.Servicios;
+using ProyectoMantenimiento.Dominio.Entidades;
+using ProyectoMantenimiento.Persistencia;
+using System;
 
-namespace ProyectoMantenimiento.Interfaz.Controllers
+var builder = WebApplication.CreateBuilder(args);
+
+// Configurar servicios
+builder.Services.AddControllersWithViews();
+
+// Configurar DbContext
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Configurar Identity
+builder.Services.AddIdentity<Usuario, IdentityRole>(options => {
+    options.Password.RequireDigit = false;
+    options.Password.RequiredLength = 6;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequireLowercase = false;
+})
+.AddEntityFrameworkStores<AppDbContext>()
+.AddDefaultTokenProviders();
+
+// Configurar opciones de Cookie
+builder.Services.ConfigureApplicationCookie(options => {
+    options.LoginPath = "/Login";
+    options.AccessDeniedPath = "/Login";
+});
+
+// Registrar servicios
+builder.Services.AddScoped<IUsuarioServicio, UsuarioServicio>();
+
+var app = builder.Build();
+
+// Configurar pipeline HTTP
+if (!app.Environment.IsDevelopment())
 {
-    public class LoginController : Controller
-    {
-        private readonly IUsuarioServicio _usuarioServicio;
-
-        public LoginController(IUsuarioServicio usuarioServicio)
-        {
-            _usuarioServicio = usuarioServicio;
-        }
-
-        // GET: /Login
-        [HttpGet]
-        public IActionResult Index()
-        {
-            return View(); // Carga Views/Login/Index.cshtml
-        }
-
-        // POST: /Login
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Index(LoginDto modelo)
-        {
-            if (!ModelState.IsValid)
-                return View(modelo);
-
-            var resultado = await _usuarioServicio.LoginAsync(modelo);
-            if (resultado.Succeeded)
-                return RedirectToAction("Index", "Home");
-
-            ModelState.AddModelError(string.Empty, "Usuario o contraseña inválidos");
-            return View(modelo);
-        }
-
-        // GET: /Login/Logout
-        [HttpGet]
-        public async Task<IActionResult> Logout()
-        {
-            await _usuarioServicio.LogoutAsync();
-            return RedirectToAction("Index");
-        }
-    }
+    app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
 }
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Login}/{action=Index}/{id?}");
+
+app.Run();

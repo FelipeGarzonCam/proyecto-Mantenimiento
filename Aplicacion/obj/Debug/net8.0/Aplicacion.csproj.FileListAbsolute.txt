@@ -1,0 +1,16 @@
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Aplicacion\bin\Debug\net8.0\Aplicacion.deps.json
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Aplicacion\bin\Debug\net8.0\Aplicacion.dll
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Aplicacion\bin\Debug\net8.0\Aplicacion.pdb
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Aplicacion\bin\Debug\net8.0\Dominio.dll
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Aplicacion\bin\Debug\net8.0\Dominio.pdb
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Aplicacion\obj\Debug\net8.0\Aplicacion.csproj.AssemblyReference.cache
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Aplicacion\obj\Debug\net8.0\Aplicacion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Aplicacion\obj\Debug\net8.0\Aplicacion.AssemblyInfoInputs.cache
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Aplicacion\obj\Debug\net8.0\Aplicacion.AssemblyInfo.cs
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Aplicacion\obj\Debug\net8.0\Aplicacion.csproj.CoreCompileInputs.cache
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Aplicacion\obj\Debug\net8.0\Aplicacion.sourcelink.json
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Aplicacion\obj\Debug\net8.0\Aplicacion.csproj.Up2Date
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Aplicacion\obj\Debug\net8.0\Aplicacion.dll
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Aplicacion\obj\Debug\net8.0\refint\Aplicacion.dll
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Aplicacion\obj\Debug\net8.0\Aplicacion.pdb
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas De Mantenimiento\Proyecto\Aplicacion\obj\Debug\net8.0\ref\Aplicacion.dll

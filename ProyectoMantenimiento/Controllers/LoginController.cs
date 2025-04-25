@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 using ProyectoMantenimiento.Aplicacion.DTOs;
 using ProyectoMantenimiento.Aplicacion.Servicios;
+using System.Threading.Tasks;
 
-namespace ProyectoMantenimiento.Interfaz.Controllers
+namespace ProyectoMantenimiento.Controllers
 {
     public class LoginController : Controller
     {
@@ -18,7 +18,6 @@ namespace ProyectoMantenimiento.Interfaz.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            // Muestra la vista Views/Login/Index.cshtml
             return View();
         }
 
@@ -29,19 +28,15 @@ namespace ProyectoMantenimiento.Interfaz.Controllers
         {
             if (!ModelState.IsValid)
             {
-                // Si faltan datos o no pasan las validaciones, volvemos a mostrar la vista con los errores
                 return View(modelo);
             }
 
-            // Intentamos autenticar al usuario
             var resultado = await _usuarioServicio.LoginAsync(modelo);
             if (resultado.Succeeded)
             {
-                // Si el login fue exitoso, redirigimos al Home
                 return RedirectToAction("Index", "Home");
             }
 
-            // Si falla, añadimos un error genérico y regresamos la vista
             ModelState.AddModelError(string.Empty, "Usuario o contraseña inválidos");
             return View(modelo);
         }
