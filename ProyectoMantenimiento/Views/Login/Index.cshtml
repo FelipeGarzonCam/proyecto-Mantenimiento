@@ -4,56 +4,90 @@
     Layout = "_LoginLayout";
 }
 
-<div class="container mt-5">
-      <!-- Logo de la empresa -->
-    <div class="text-center mb-4">
-            <img src="~/img/company-logo.png" alt="Logo de la Empresa" style="max-height: 100px;" />        
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header bg-primary text-white">
-                    <h4 class="mb-0">Iniciar Sesión</h4>
-                </div>
-                <div class="card-body">
-                    @if (TempData["LoginError"] != null)
-                    {
-                        <div class="alert alert-danger" role="alert">
-                            @TempData["LoginError"]
-                        </div>
-                    }
+<style>
+    /* Eliminar el fondo claro y asegurar que se use el tema oscuro */
+    body, html, .login-page, .login-box, .login-logo, .card {
+        background-color: #343a40 !important;
+    }   
 
-                    @if (TempData["RegisterSuccess"] != null)
-                    {
-                        <div class="alert alert-success" role="alert">
-                            @TempData["RegisterSuccess"]
-                        </div>
-                    }
+    /* Ajustar el estilo de la tarjeta de login */
+    .card {
+        margin-bottom: 0;
+        box-shadow: none;
+    }
 
-                    <form asp-action="Index" method="post">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    .card-body.login-card-body {
+        background-color: #12171c !important;
+        color: white;
+    }
 
-                        <div class="mb-3">
-                            <label asp-for="UserName" class="form-label">Usuario</label>
-                            <input asp-for="UserName" class="form-control" />
-                            <span asp-validation-for="UserName" class="text-danger"></span>
-                        </div>
+    /* Ajustar enlace de registro */
+    .login-card-body a {
+        color: #3498db;
+    }
+</style>
 
-                        <div class="mb-3">
-                            <label asp-for="Password" class="form-label">Contraseña</label>
-                            <input asp-for="Password" class="form-control" />
-                            <span asp-validation-for="Password" class="text-danger"></span>
-                        </div>
+<div class="login-page">
+    <div class="login-box">
+        <!-- Logo de la empresa -->
+        <div class="login-logo">
+            <img src="~/img/company-logo.png" alt="Logo de la Empresa" style="max-height: 200px; background-color=#343a40 !importan" />
+        </div>
 
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-                        </div>
-                    </form>
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">Inicia sesión</p>
 
-                    <hr />
-                    <div class="text-center">
-                        <p>¿No tienes una cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Regístrate</a></p>
+                @if (TempData["LoginError"] != null)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        @TempData["LoginError"]
                     </div>
+                }
+
+                @if (TempData["RegisterSuccess"] != null)
+                {
+                    <div class="alert alert-success" role="alert">
+                        @TempData["RegisterSuccess"]
+                    </div>
+                }
+
+                <form asp-action="Index" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="input-group mb-3">
+                        <input asp-for="UserName" class="form-control" placeholder="Nombre">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input asp-for="Password" type="password" class="form-control" placeholder="Contraseña">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="text-center mt-3">
+                    <p>- O -</p>
+                </div>
+
+                <div class="text-center mt-2">
+                    <p>¿No tienes una cuenta? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Regístrate</a></p>
                 </div>
             </div>
         </div>
@@ -63,23 +97,35 @@
 <!-- Register Modal -->
 <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header bg-primary text-white">
+        <div class="modal-content bg-dark">
+            <div class="modal-header">
                 <h5 class="modal-title" id="registerModalLabel">Registro de Usuario</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
                 <form asp-action="Register" method="post" enctype="multipart/form-data">
-                    <div class="mb-3">
-                        <label for="UserName" class="form-label">Usuario</label>
-                        <input type="text" class="form-control" id="UserName" name="UserName" required />
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="UserName" name="UserName" placeholder="Usuario" required>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="Password" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="Password" name="Password" required />
-                    </div>                    
-                    <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-primary">Registrarse</button>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" id="Password" name="Password" placeholder="Contraseña" required>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+                        </div>
                     </div>
                 </form>
             </div>
