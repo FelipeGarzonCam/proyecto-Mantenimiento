@@ -1,69 +1,126 @@
 ﻿@model ProyectoMantenimiento.Aplicacion.DTOs.LoginDto
 @{
-    ViewData["Title"] = "Iniciar Sesión";
-    Layout = "_LoginLayout";
+    ViewData["Title"] = "Iniciar sesión";
+    Layout = "_LoginLayout";  // Debe incluir jQuery, Bootstrap, Toastr y AdminLTE
 }
 
 <div class="login-box">
-    <!-- /.login-logo -->
-    <div class="card card-outline card-primary">
-        <div class="card-header text-center">
-            <a href="/" class="h1"><b>Proyecto</b>Mantenimiento</a>
-        </div>
-        <div class="card-body">
-            <p class="login-box-msg">Ingrese sus credenciales para iniciar sesión</p>
+    <div class="login-logo">
+        <a href="#"><b>Master</b>Register</a>
+    </div>
+    <div class="card">
+        <div class="card-body login-card-body">
+            <p class="login-box-msg">Login</p>
 
-            <form asp-action="Index" method="post">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <form asp-action="Index" asp-controller="Login" method="post">
+                @Html.AntiForgeryToken()
+
+                <!-- Errores generales -->
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
 
                 <div class="input-group mb-3">
-                    <input asp-for="UserName" class="form-control" placeholder="Usuario">
+                    <input asp-for="UserName" class="form-control" placeholder="Usuario" />
                     <div class="input-group-append">
-                        <div class="input-group-text">
-                            <span class="fas fa-user"></span>
-                        </div>
+                        <div class="input-group-text"><span class="fas fa-user"></span></div>
                     </div>
                     <span asp-validation-for="UserName" class="text-danger"></span>
                 </div>
 
                 <div class="input-group mb-3">
-                    <input asp-for="Password" class="form-control" placeholder="Contraseña">
+                    <input asp-for="Password" type="password" class="form-control" placeholder="Contraseña" />
                     <div class="input-group-append">
-                        <div class="input-group-text">
-                            <span class="fas fa-lock"></span>
-                        </div>
+                        <div class="input-group-text"><span class="fas fa-lock"></span></div>
                     </div>
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
 
                 <div class="row">
-                    <div class="col-8">
-                        <div class="icheck-primary">
-                            <input type="checkbox" id="remember">
-                            <label for="remember">
-                                Recordarme
-                            </label>
-                        </div>
-                    </div>
-                    <!-- /.col -->
                     <div class="col-4">
                         <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
                     </div>
-                    <!-- /.col -->
+                    <div class="col-4">
+                        <button type="button"
+                                class="btn btn-secondary btn-block"
+                                onclick="abrirModalRegistro()">
+                            Registrar
+                        </button>
+                    </div>
                 </div>
             </form>
-
-            <p class="mb-1">
-                <a href="#">Olvidé mi contraseña</a>
-            </p>
         </div>
-        <!-- /.card-body -->
     </div>
-    <!-- /.card -->
 </div>
-<!-- /.login-box -->
+
+<!-- Modal de registro -->
+<div class="modal fade" id="modalRegister" tabindex="-1" role="dialog" aria-labelledby="modalRegisterLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalRegisterLabel">Registrar nuevo usuario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form asp-action="Register" asp-controller="Login" method="post">
+                @Html.AntiForgeryToken()
+                <div class="modal-body">
+                    <div asp-validation-summary="All" class="text-danger mb-2"></div>
+
+                    <div class="form-group">
+                        <label for="Registro_UserName">Usuario</label>
+                        <input name="UserName" id="Registro_UserName" class="form-control" placeholder="Usuario" />
+                        <span data-valmsg-for="UserName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="Registro_Password">Contraseña</label>
+                        <input name="Password" id="Registro_Password" type="password" class="form-control" placeholder="Contraseña" />
+                        <span data-valmsg-for="Password" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary ">Registrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @* Validaciones unobtrusive *@
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <script>
+        function abrirModalRegistro() {
+            $('#modalRegister').modal('show');
+        }
+
+        $(function () {
+            // 1) Reabrir modal si Register falló
+        @if (ViewData["ShowRegisterModal"] as bool? == true)
+        {
+            <text>
+                    $(document).ready(function() {
+                        $('#modalRegister').modal('show');
+                    });
+            </text>
+        }
+
+            // 2) Toastr de éxito en registro
+        @if (TempData["RegisterSuccess"] != null)
+        {
+            <text>
+                    toastr.success('@Html.Raw(TempData["RegisterSuccess"].ToString().Replace("'", "\\'"))');
+            </text>
+        }
+
+            // 3) Toastr de error en login
+        @if (TempData["LoginError"] != null)
+        {
+            <text>
+                    toastr.error('@Html.Raw(TempData["LoginError"].ToString().Replace("'", "\\'"))');
+            </text>
+        }
+        });
+    </script>
 }

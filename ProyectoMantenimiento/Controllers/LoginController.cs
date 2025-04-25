@@ -37,8 +37,8 @@ namespace ProyectoMantenimiento.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            ModelState.AddModelError(string.Empty, "Usuario o contraseña inválidos");
-            return View(modelo);
+            TempData["LoginError"] = "Usuario o contraseña inválidos";
+            return RedirectToAction("Index");
         }
 
         // GET: /Login/Logout
@@ -47,6 +47,31 @@ namespace ProyectoMantenimiento.Controllers
         {
             await _usuarioServicio.LogoutAsync();
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegistroDto modelo)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Para que se abra el modal con los errores
+                ViewData["ShowRegisterModal"] = true;
+                return View("Index", new LoginDto());
+            }
+
+            var resultado = await _usuarioServicio.RegistrarAsync(modelo);
+            if (resultado.Succeeded)
+            {
+                TempData["RegisterSuccess"] = "Usuario registrado correctamente.";
+                return RedirectToAction("Index");
+            }
+
+            foreach (var error in resultado.Errors)
+                ModelState.AddModelError(string.Empty, error.Description);
+
+            ViewData["ShowRegisterModal"] = true;
+            return View("Index", new LoginDto());
         }
     }
 }

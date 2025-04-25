@@ -29,8 +29,7 @@ namespace ProyectoMantenimiento.Aplicacion.Servicios
         {
             var usuario = new Usuario
             {
-                UserName = registroDto.UserName,
-                Email = registroDto.Email,
+                UserName = registroDto.UserName,               
                 LogoUrl = registroDto.LogoUrl
             };
 

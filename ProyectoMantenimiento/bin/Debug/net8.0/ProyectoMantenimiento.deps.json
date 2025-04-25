@@ -746,10 +746,7 @@
           "Microsoft.Extensions.Identity.Core": "8.0.4"
         },
         "runtime": {
-          "Aplicacion.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Aplicacion.dll": {}
         }
       },
       "Dominio/1.0.0": {
@@ -757,10 +754,7 @@
           "Microsoft.Extensions.Identity.Stores": "8.0.4"
         },
         "runtime": {
-          "Dominio.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Dominio.dll": {}
         }
       },
       "Persistencia/1.0.0": {
@@ -771,10 +765,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.4"
         },
         "runtime": {
-          "Persistencia.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Persistencia.dll": {}
         }
       }
     }

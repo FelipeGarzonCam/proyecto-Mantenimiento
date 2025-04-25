@@ -12,14 +12,11 @@ namespace ProyectoMantenimiento.Aplicacion.DTOs
         [Required(ErrorMessage = "El usuario es obligatorio")]
         public string UserName { get; set; }
 
-        [Required(ErrorMessage = "El correo es obligatorio")]
-        [EmailAddress(ErrorMessage = "Formato de correo inválido")]
-        public string Email { get; set; }
-
         [Required(ErrorMessage = "La contraseña es obligatoria")]
-        [DataType(DataType.Password)]
+        [StringLength(100, ErrorMessage = "La {0} debe tener al menos {2} caracteres.", MinimumLength = 6)]
         public string Password { get; set; }
 
+        // Agregar esta propiedad:
         public string LogoUrl { get; set; }
     }
 }
