@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ProyectoMantenimiento.Aplicacion.DTOs
 {
@@ -14,9 +9,9 @@ namespace ProyectoMantenimiento.Aplicacion.DTOs
 
         [Required(ErrorMessage = "La contraseña es obligatoria")]
         [StringLength(100, ErrorMessage = "La {0} debe tener al menos {2} caracteres.", MinimumLength = 6)]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        // Agregar esta propiedad:
         public string LogoUrl { get; set; }
     }
 }

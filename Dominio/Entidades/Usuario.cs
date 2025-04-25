@@ -1,15 +1,18 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
-
 
 namespace ProyectoMantenimiento.Dominio.Entidades
 {
     public class Usuario : IdentityUser
     {
+        // Propiedad existente
         public string LogoUrl { get; set; }
+
+        // Propiedades adicionales que podrías necesitar
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }   
+
+        
     }
 }

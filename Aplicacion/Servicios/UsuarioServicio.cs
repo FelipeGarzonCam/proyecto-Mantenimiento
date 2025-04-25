@@ -29,11 +29,18 @@ namespace ProyectoMantenimiento.Aplicacion.Servicios
         {
             var usuario = new Usuario
             {
-                UserName = registroDto.UserName,               
+                UserName = registroDto.UserName,
                 LogoUrl = registroDto.LogoUrl
             };
 
-            return await _userManager.CreateAsync(usuario, registroDto.Password);
+            var resultado = await _userManager.CreateAsync(usuario, registroDto.Password);
+
+            if (resultado.Succeeded)
+            {
+                await _signInManager.SignInAsync(usuario, isPersistent: true);
+            }
+
+            return resultado;
         }
 
         public async Task LogoutAsync()

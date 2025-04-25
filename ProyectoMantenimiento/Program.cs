@@ -1,42 +1,49 @@
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using ProyectoMantenimiento.Aplicacion.Servicios;
 using ProyectoMantenimiento.Dominio.Entidades;
 using ProyectoMantenimiento.Persistencia;
-using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configurar servicios
+// Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Configurar DbContext
+// Add DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Configurar Identity
+// Add Identity
 builder.Services.AddIdentity<Usuario, IdentityRole>(options => {
-    options.Password.RequireDigit = false;
+    // Password settings
+    options.Password.RequireDigit = true;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireUppercase = true;
+    options.Password.RequireNonAlphanumeric = true;
     options.Password.RequiredLength = 6;
-    options.Password.RequireNonAlphanumeric = false;
-    options.Password.RequireUppercase = false;
-    options.Password.RequireLowercase = false;
+
+    // User settings
+    options.User.RequireUniqueEmail = false; // Set to true if you want to use email
 })
 .AddEntityFrameworkStores<AppDbContext>()
 .AddDefaultTokenProviders();
 
-// Configurar opciones de Cookie
+// Configure cookie settings
 builder.Services.ConfigureApplicationCookie(options => {
+    options.Cookie.HttpOnly = true;
+    options.ExpireTimeSpan = TimeSpan.FromDays(7);
     options.LoginPath = "/Login";
+    options.LogoutPath = "/Login/Logout";
     options.AccessDeniedPath = "/Login";
+    options.SlidingExpiration = true;
 });
 
-// Registrar servicios
+// Register application services
 builder.Services.AddScoped<IUsuarioServicio, UsuarioServicio>();
 
 var app = builder.Build();
 
-// Configurar pipeline HTTP
+// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");

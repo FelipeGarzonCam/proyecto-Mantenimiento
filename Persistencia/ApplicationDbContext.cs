@@ -10,6 +10,20 @@ namespace ProyectoMantenimiento.Persistencia
         {
         }
 
-        // Aquí puedes agregar tus DbSet para otras entidades
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            // Configuraciones adicionales de las entidades si es necesario
+            builder.Entity<Usuario>(entity =>
+            {
+                entity.Property(e => e.LogoUrl).HasMaxLength(255).IsRequired(false);
+            });
+
+            // Aquí puedes añadir más configuraciones de mapeo si necesitas
+        }
+
+        // Definir DbSets para otras entidades relacionadas con tu sistema
+        // Ejemplo: public DbSet<OtraEntidad> OtrasEntidades { get; set; }
     }
 }
