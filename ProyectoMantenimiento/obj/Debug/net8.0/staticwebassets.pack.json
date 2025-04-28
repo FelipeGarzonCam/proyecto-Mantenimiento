@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tomás\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\wwwroot\\img\\company-logo.png",
+      "PackagePath": "staticwebassets\\img\\company-logo.png"
+    },
+    {
       "Id": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tomás\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

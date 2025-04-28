@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Kku6Xwj3nanjoj8N9vwVflAgOYZgX3wwHxpZML2gIwQ=",
+  "Hash": "hsCq5NvFq9MiBf0EOcR5OlgfhNgzpYngm4v/ub+j/68=",
   "Source": "ProyectoMantenimiento",
   "BasePath": "_content/ProyectoMantenimiento",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tomás\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\wwwroot\\img\\company-logo.png",
+      "SourceId": "ProyectoMantenimiento",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tomás\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\wwwroot\\",
+      "BasePath": "_content/ProyectoMantenimiento",
+      "RelativePath": "img/company-logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\company-logo.png"
     },
     {
       "Identity": "C:\\Users\\Computer\\OneDrive - Universidad Santo Tomás\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\wwwroot\\js\\site.js",
