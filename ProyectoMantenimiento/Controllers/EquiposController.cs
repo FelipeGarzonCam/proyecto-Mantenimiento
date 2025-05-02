@@ -19,15 +19,20 @@ namespace ProyectoMantenimiento.Controllers
 
         // GET: /Equipos/Create
         public IActionResult Create() => View();
-
-        // POST: /Equipos/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Equipo equipo)
         {
+            // 1) Registrar valores vinculados para comprobar binding
+            System.Diagnostics.Debug.WriteLine($"[DEBUG] Equipo recibido: Nombre={equipo.Nombre}, Descripcion={equipo.Descripcion}, Cantidad={equipo.Cantidad}");
+
+            // 2) Si ModelState falla, volcamos todos los errores al ViewBag
             if (!ModelState.IsValid)
             {
-                // For debugging: muestra todos los errores en la vista
+                var errores = ModelState
+                    .SelectMany(ms => ms.Value.Errors.Select(err => err.ErrorMessage))
+                    .ToList();
+                ViewBag.ErroresBinding = errores;
                 return View(equipo);
             }
 
@@ -39,11 +44,13 @@ namespace ProyectoMantenimiento.Controllers
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("", ex.Message);
-                // Opcional: log ex.ToString()
+                // 3) Si hay excepción, la guardamos en ViewBag
+                ViewBag.ErrorAlGuardar = ex.GetBaseException().Message;
                 return View(equipo);
             }
         }
+
+
 
 
         // GET: /Equipos/Details/5

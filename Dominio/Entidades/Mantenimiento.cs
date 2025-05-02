@@ -10,7 +10,6 @@ using ProyectoMantenimiento.Dominio.Entidades;
 
 namespace ProyectoMantenimiento.Dominio.Entidades
 {
-    [Table("Mantenimiento")]
     public class Mantenimiento
     {
         [Key]

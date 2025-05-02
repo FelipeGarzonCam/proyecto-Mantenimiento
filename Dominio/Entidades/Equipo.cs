@@ -8,9 +8,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProyectoMantenimiento.Dominio.Entidades
 {
-    [Table("Equipo")]
+  
     public class Equipo
     {
+        public Equipo()
+        {
+            // Así nunca será null al hacer el binding
+            Mantenimientos = new List<Mantenimiento>();
+        }
         [Key]
         public int EquipoId { get; set; }
 
@@ -20,7 +25,7 @@ namespace ProyectoMantenimiento.Dominio.Entidades
 
         public string Descripcion { get; set; }
 
-        public int Cantidad { get; set; }
+        public int? Cantidad { get; set; }
 
         // Relación con mantenimientos (si existe entidad Mantenimiento)
         public virtual ICollection<Mantenimiento> Mantenimientos { get; set; }

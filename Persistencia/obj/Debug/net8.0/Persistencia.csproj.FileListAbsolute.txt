@@ -42,6 +42,9 @@ C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persisten
 C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persistencia\bin\Debug\net8.0\Dominio.pdb
 C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persistencia\obj\Debug\net8.0\Persistencia.csproj.AssemblyReference.cache
 C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persistencia\obj\Debug\net8.0\Persistencia.Migrations.Primera.resources
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persistencia\obj\Debug\net8.0\Persistencia.Migrations.EntidadEquipo.resources
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persistencia\obj\Debug\net8.0\Persistencia.Migrations.SinPlurarizacion.resources
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persistencia\obj\Debug\net8.0\Persistencia.Migrations.Unamas.resources
 C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persistencia\obj\Debug\net8.0\Persistencia.csproj.GenerateResource.cache
 C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persistencia\obj\Debug\net8.0\Persistencia.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persistencia\obj\Debug\net8.0\Persistencia.AssemblyInfoInputs.cache
@@ -54,5 +57,3 @@ C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persisten
 C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persistencia\obj\Debug\net8.0\Persistencia.pdb
 C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persistencia\obj\Debug\net8.0\Persistencia.genruntimeconfig.cache
 C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persistencia\obj\Debug\net8.0\ref\Persistencia.dll
-C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persistencia\obj\Debug\net8.0\Persistencia.Migrations.EntidadEquipo.resources
-C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persistencia\obj\Debug\net8.0\Persistencia.Migrations.SinPlurarizacion.resources
