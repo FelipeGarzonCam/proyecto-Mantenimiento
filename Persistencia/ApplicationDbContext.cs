@@ -25,5 +25,16 @@ namespace ProyectoMantenimiento.Persistencia
         }
 
         public DbSet<Usuario> Usuarios { get; set; }
+
+        public DbSet<Equipo> Equipos { get; set; }
+        public DbSet<Mantenimiento> Mantenimientos { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            // Quita la pluralización automática (Equipo, Mantenimiento, etc.)
+            modelBuilder.Conventions
+                        .Remove<PluralizingTableNameConvention>();
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
