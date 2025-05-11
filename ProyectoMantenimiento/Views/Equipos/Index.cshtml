@@ -4,30 +4,73 @@
     ViewBag.Title = "Listado de Equipos";
     Layout = "~/Views/Shared/_Layout.cshtml"; // asumiendo AdminLTE base
 }
-<section class="content-header">
-    <h1>Equipos <small>Listado</small></h1>
+<section class="content-header">    
 </section>
 <section class="content">
     <div class="box box-primary">
         <div class="box-header with-border">
-            <a href="@Url.Action("Create")" class="btn btn-primary"><i class="fa fa-plus"></i> Nuevo Equipo</a>
+            <a href="@Url.Action("Create")" class="btn mb-3 btn-success"><i class="fa fa-plus"></i> Nuevo Equipo</a>
         </div>
         <div class="box-body">
-            <table id="tablaEquipos" class="table table-bordered table-striped">
+            <table id="tablaEquipos" class="table table-bordered dataTables_wrapper">
                 <thead>
-                    <tr><th>Nombre</th><th>Cantidad</th><th style="width:120px">Acciones</th></tr>
+                    <tr>
+                        <th>ID</th>              
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Cantidad</th>
+                        <th class="text-center">Acciones</th>  
+                    </tr>
                 </thead>
+
                 <tbody>
-                    @foreach (var e in Model)
-                    {
+                <tbody>
+                        @foreach (var e in Model)
+                        {
                         <tr>
+                            <td>@e.EquipoId</td>
                             <td>@e.Nombre</td>
+                            <td>@e.Descripcion</td>
                             <td>@e.Cantidad</td>
-                            <td>
-                                <a href="@Url.Action("Details", new { id = e.EquipoId })" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
+                            <td class="text-center">
+                                <!-- Ver detalles -->
+                                <a asp-action="Details" asp-route-id="@e.EquipoId"
+                                   class="btn btn-info btn-sm"
+                                   title="Visualizar detalles"
+                                   data-toggle="tooltip" data-placement="top">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+
+                                <!-- Nuevo mantenimiento -->
+                                <a asp-controller="Mantenimientos" asp-action="Create"
+                                   asp-route-equipoId="@e.EquipoId"
+                                   class="btn btn-success btn-sm"
+                                   title="Crear registro de mantenimiento"
+                                   data-toggle="tooltip" data-placement="top">
+                                    <i class="fa fa-wrench"></i>
+                                </a>
+
+                                <!-- Editar -->
+                                <a asp-action="Edit" asp-route-id="@e.EquipoId"
+                                   class="btn btn-warning btn-sm"
+                                   title="Editar equipo"
+                                   data-toggle="tooltip" data-placement="top">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+
+                                <!-- Eliminar -->
+                                <a asp-action="Delete" asp-route-id="@e.EquipoId"
+                                   class="btn btn-danger btn-sm"
+                                   title="Eliminar equipo"
+                                   data-toggle="tooltip" data-placement="top"
+                                   onclick="return confirm('¿Seguro de eliminar?');">
+                                    <i class="fa fa-trash"></i>
+                                </a>
                             </td>
                         </tr>
-                    }
+                        }
+                </tbody>
+
                 </tbody>
             </table>
         </div>

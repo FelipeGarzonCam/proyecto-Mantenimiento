@@ -73,3 +73,9 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+<script>
+    // Inicializa todos los tooltips de la página
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

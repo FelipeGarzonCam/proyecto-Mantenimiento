@@ -57,3 +57,6 @@ C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persisten
 C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persistencia\obj\Debug\net8.0\Persistencia.pdb
 C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persistencia\obj\Debug\net8.0\Persistencia.genruntimeconfig.cache
 C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persistencia\obj\Debug\net8.0\ref\Persistencia.dll
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persistencia\obj\Debug\net8.0\Persistencia.Migrations.SyncHojaVidaEquipos.resources
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persistencia\obj\Debug\net8.0\Persistencia.Migrations.SyncMantenimientos.resources
+C:\Users\Felip\OneDrive - Universidad Santo Tomás\2025 i\Tecnicas Lap\Persistencia\obj\Debug\net8.0\Persistencia.Migrations.SyncDatabase.resources

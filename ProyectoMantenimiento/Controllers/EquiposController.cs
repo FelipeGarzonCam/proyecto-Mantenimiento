@@ -3,6 +3,7 @@ using System.Data.Entity;
 using ProyectoMantenimiento.Persistencia;
 using ProyectoMantenimiento.Dominio.Entidades;
 using Microsoft.AspNetCore.Mvc;
+using ProyectoMantenimiento.Dominio.ViewModels;
 
 namespace ProyectoMantenimiento.Controllers
 {
@@ -50,22 +51,55 @@ namespace ProyectoMantenimiento.Controllers
             }
         }
 
-
-
-
         // GET: /Equipos/Details/5
         public IActionResult Details(int id)
         {
-            var equipo = _ctx.Equipos.Include(e => e.Mantenimientos)
-                                      .FirstOrDefault(e => e.EquipoId == id);
-            if (equipo == null) return NotFound();      // Core helper
-            return View(equipo);                         // modelo = Equipo
+            var equipo = _ctx.Equipos.Find(id);
+            if (equipo == null) return NotFound();
+
+            var hoja = _ctx.HojaVidaEquipos.FirstOrDefault(h => h.EquipoId == id);
+
+            var mantenimientos = _ctx.Mantenimientos
+                                      .Where(m => m.EquipoId == id)
+                                      .OrderByDescending(m => m.Fecha)
+                                      .ToList();
+
+            var vm = new EquipoDetalleVM
+            {
+                Equipo = equipo,
+                HojaVida = hoja,
+                ListaMantenimientos = mantenimientos
+            };
+
+            return View(vm);
         }
+
 
         protected override void Dispose(bool disposing)
         {
             if (disposing) _ctx.Dispose();
             base.Dispose(disposing);
         }
+
+        // GET: /Equipos/Edit/5
+        public IActionResult Edit(int id)
+        {
+            var equipo = _ctx.Equipos.Find(id);
+            return equipo == null ? NotFound() : View(equipo);
+        }
+
+        // POST: /Equipos/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Equipo equipo)
+        {
+            if (!ModelState.IsValid)
+                return View(equipo);
+
+            _ctx.Entry(equipo).State = EntityState.Modified;
+            _ctx.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }
