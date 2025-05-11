@@ -1,0 +1,36 @@
+﻿@model ProyectoMantenimiento.Dominio.Entidades.Equipo
+@{
+    ViewBag.Title = "Ficha de Equipo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="content-header">
+    <h1>Equipos <small>Detalles</small></h1>
+</section>
+<section class="content">
+    <div class="box box-info">
+        <div class="box-header with-border"><h3 class="box-title">@Model.Nombre</h3></div>
+        <div class="box-body">
+            <dl class="dl-horizontal">
+                <dt>Descripción</dt><dd>@Model.Descripcion</dd>
+                <dt>Cantidad</dt><dd>@Model.Cantidad</dd>
+                <dt>Mantenimientos</dt><dd>@Model.Mantenimientos.Count()</dd>
+            </dl>
+            @if (Model.Mantenimientos.Any())
+            {
+                <table class="table table-bordered table-striped">
+                    <thead><tr><th>Fecha</th><th>Tipo</th><th>Descripción</th></tr></thead>
+                    <tbody>
+                    @foreach (var m in Model.Mantenimientos.OrderByDescending(x => x.Fecha))
+                    {
+                        <tr><td>@m.Fecha.ToShortDateString()</td><td>@m.Tipo</td><td>@m.Descripcion</td></tr>
+                    }
+                    </tbody>
+                </table>
+            }
+        </div>
+        <div class="box-footer">
+            <a href="@Url.Action("Index")" class="btn btn-default"><i class="fa fa-arrow-left"></i> Volver</a>
+        </div>
+    </div>
+</section>
+

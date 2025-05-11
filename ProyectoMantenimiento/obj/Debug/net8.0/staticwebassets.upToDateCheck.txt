@@ -1,5 +1,6 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\img\company-logo.png
 wwwroot\js\site.js
 wwwroot\lib\admin-lte\css\adminlte.css
 wwwroot\lib\admin-lte\css\adminlte.css.map

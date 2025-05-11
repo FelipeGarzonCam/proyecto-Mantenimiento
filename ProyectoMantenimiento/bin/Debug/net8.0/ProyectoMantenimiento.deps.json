@@ -449,7 +449,10 @@
           "Persistencia": "1.0.0"
         },
         "runtime": {
-          "Aplicacion.dll": {}
+          "Aplicacion.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Dominio/1.0.0": {
@@ -457,7 +460,10 @@
           "Microsoft.Extensions.Identity.Stores": "8.0.4"
         },
         "runtime": {
-          "Dominio.dll": {}
+          "Dominio.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Persistencia/1.0.0": {
@@ -466,7 +472,10 @@
           "EntityFramework": "6.5.1"
         },
         "runtime": {
-          "Persistencia.dll": {}
+          "Persistencia.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

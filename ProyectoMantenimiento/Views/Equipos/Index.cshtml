@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ProyectoMantenimiento.Dominio.Entidades.Equipo>
+
+@{
+    ViewBag.Title = "Listado de Equipos";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // asumiendo AdminLTE base
+}
+<section class="content-header">
+    <h1>Equipos <small>Listado</small></h1>
+</section>
+<section class="content">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <a href="@Url.Action("Create")" class="btn btn-primary"><i class="fa fa-plus"></i> Nuevo Equipo</a>
+        </div>
+        <div class="box-body">
+            <table id="tablaEquipos" class="table table-bordered table-striped">
+                <thead>
+                    <tr><th>Nombre</th><th>Cantidad</th><th style="width:120px">Acciones</th></tr>
+                </thead>
+                <tbody>
+                    @foreach (var e in Model)
+                    {
+                        <tr>
+                            <td>@e.Nombre</td>
+                            <td>@e.Cantidad</td>
+                            <td>
+                                <a href="@Url.Action("Details", new { id = e.EquipoId })" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

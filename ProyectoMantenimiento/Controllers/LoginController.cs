@@ -37,7 +37,7 @@ namespace ProyectoMantenimiento.Controllers
             if (loginExitoso)
             {
                 HttpContext.Session.SetString("Usuario", model.UserName);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Equipos");
             }
 
             ModelState.AddModelError("", "Usuario o contraseña incorrectos.");
