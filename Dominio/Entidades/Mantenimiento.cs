@@ -1,32 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using ProyectoMantenimiento.Dominio.Entidades;
-
 
 namespace ProyectoMantenimiento.Dominio.Entidades
 {
+    [Table("Mantenimientos")]
     public class Mantenimiento
     {
         [Key]
         public int MantenimientoId { get; set; }
 
+        [ForeignKey(nameof(Equipo))]
+        public int EquipoId { get; set; }
+
         [Required]
         public DateTime Fecha { get; set; }
 
-        [StringLength(250)]
-        public string Descripcion { get; set; }
+        [StringLength(80)]
+        public string Responsable { get; set; }
 
-        [Required, StringLength(50)]
-        public string Tipo { get; set; } // Preventivo, Correctivo
+        public string Notas { get; set; }
 
-        // FK → Equipo
-        public int EquipoId { get; set; }
-        [ForeignKey("EquipoId")]
+        [Required(ErrorMessage = "Seleccione el tipo")]
+        [StringLength(20)]
+        public string Tipo { get; set; }
+
+
+        /* NAVIGATION */
         public virtual Equipo Equipo { get; set; }
     }
 }

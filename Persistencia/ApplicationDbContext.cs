@@ -28,6 +28,8 @@ namespace ProyectoMantenimiento.Persistencia
 
         public DbSet<Equipo> Equipos { get; set; }
         public DbSet<Mantenimiento> Mantenimientos { get; set; }
+
+        public DbSet<HojaVidaEquipos> HojaVidaEquipos { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             // Quita la pluralización automática (Equipo, Mantenimiento, etc.)
