@@ -5,6 +5,7 @@ using ProyectoMantenimiento.Persistencia;             // tu AppDbContext EF 6
 using ProyectoMantenimiento.Aplicacion.Servicios;     // IUsuarioServicio y UsuarioServicio
 using System;
 using Microsoft.AspNetCore.Http;
+using Rotativa.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,8 +33,11 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
-
 app.UseSession();
+var env = app.Environment;                // ? ahora existe
+Rotativa.AspNetCore.RotativaConfiguration
+        .Setup(env.WebRootPath, "Rotativa");  // configuración Rotativa
+
 
 
 app.MapControllerRoute(

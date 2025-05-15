@@ -5,6 +5,18 @@
       "PackagePath": "staticwebassets\\ProyectoMantenimiento.czt9gqwq37.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Felip\\OneDrive - Universidad Santo Tomás\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\wwwroot\\Rotativa\\wkhtmltoimage.exe",
+      "PackagePath": "staticwebassets\\Rotativa\\wkhtmltoimage.exe"
+    },
+    {
+      "Id": "C:\\Users\\Felip\\OneDrive - Universidad Santo Tomás\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
+      "PackagePath": "staticwebassets\\Rotativa\\wkhtmltopdf.exe"
+    },
+    {
+      "Id": "C:\\Users\\Felip\\OneDrive - Universidad Santo Tomás\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\wwwroot\\Rotativa\\wkhtmltox.dll",
+      "PackagePath": "staticwebassets\\Rotativa\\wkhtmltox.dll"
+    },
+    {
       "Id": "C:\\Users\\Felip\\OneDrive - Universidad Santo Tomás\\2025 i\\Tecnicas Lap\\ProyectoMantenimiento\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

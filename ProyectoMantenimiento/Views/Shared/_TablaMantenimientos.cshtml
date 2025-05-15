@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ProyectoMantenimiento.Dominio.Entidades.Mantenimiento>
+
+<table class="table table-bordered table" id="tabla-mant">
+    <thead>
+        <tr>
+            <th style="width:25%;">Equipo</th>
+            <th style="width:35%;">Descripción</th>
+            <th style="width:20%;">Fecha</th>
+            <th style="width:20%;">Costo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@m.Equipo?.Nombre</td>
+                <td>
+                    @(string.IsNullOrWhiteSpace(m.TrabajoRealizado)
+                        ? m.Descripcion
+                        : m.TrabajoRealizado)
+                </td>
+                <!-- Aquí corregimos el formato de la fecha: día/mes/año hora:minuto -->
+                <td>@m.Fecha.ToString("dd/MM/yyyy HH:mm")</td>
+                <td>
+                    @(m.CostoTotal.HasValue
+                        ? m.CostoTotal.Value.ToString("C")
+                        : "-")
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

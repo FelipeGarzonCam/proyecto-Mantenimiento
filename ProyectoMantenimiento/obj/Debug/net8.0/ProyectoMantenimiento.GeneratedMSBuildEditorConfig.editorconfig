@@ -20,6 +20,14 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
+[C:/Users/Felip/OneDrive - Universidad Santo Tomás/2025 i/Tecnicas Lap/ProyectoMantenimiento/Views/Correctivos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29ycmVjdGl2b3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Felip/OneDrive - Universidad Santo Tomás/2025 i/Tecnicas Lap/ProyectoMantenimiento/Views/Correctivos/Print.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29ycmVjdGl2b3NcUHJpbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Felip/OneDrive - Universidad Santo Tomás/2025 i/Tecnicas Lap/ProyectoMantenimiento/Views/Equipos/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBvc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -64,6 +72,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudGVuaW1pZW50b3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Felip/OneDrive - Universidad Santo Tomás/2025 i/Tecnicas Lap/ProyectoMantenimiento/Views/Predictivos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlZGljdGl2b3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Felip/OneDrive - Universidad Santo Tomás/2025 i/Tecnicas Lap/ProyectoMantenimiento/Views/Predictivos/Print.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlZGljdGl2b3NcUHJpbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Felip/OneDrive - Universidad Santo Tomás/2025 i/Tecnicas Lap/ProyectoMantenimiento/Views/Preventivos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJldmVudGl2b3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Felip/OneDrive - Universidad Santo Tomás/2025 i/Tecnicas Lap/ProyectoMantenimiento/Views/Preventivos/Print.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJldmVudGl2b3NcUHJpbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Felip/OneDrive - Universidad Santo Tomás/2025 i/Tecnicas Lap/ProyectoMantenimiento/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -78,6 +102,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Felip/OneDrive - Universidad Santo Tomás/2025 i/Tecnicas Lap/ProyectoMantenimiento/Views/Shared/_MainMenu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NYWluTWVudS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Felip/OneDrive - Universidad Santo Tomás/2025 i/Tecnicas Lap/ProyectoMantenimiento/Views/Shared/_TablaMantenimientos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9UYWJsYU1hbnRlbmltaWVudG9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Felip/OneDrive - Universidad Santo Tomás/2025 i/Tecnicas Lap/ProyectoMantenimiento/Views/Shared/_ValidationScriptsPartial.cshtml]
