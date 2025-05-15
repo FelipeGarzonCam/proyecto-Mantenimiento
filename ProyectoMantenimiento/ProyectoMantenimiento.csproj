@@ -12,6 +12,19 @@
 		<PackageReference Include="EntityFramework" Version="6.5.1" />
 		<PackageReference Include="itext7" Version="7.2.5" />
 		<PackageReference Include="Microsoft.jQuery.Unobtrusive.Validation" Version="4.0.0" />
+		<PackageReference Include="Rotativa.AspNetCore" Version="1.4.0" />
 
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <Content Update="wwwroot\Rotativa\wkhtmltoimage.exe">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Update="wwwroot\Rotativa\wkhtmltopdf.exe">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Update="wwwroot\Rotativa\wkhtmltox.dll">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
 	</ItemGroup>
 </Project>

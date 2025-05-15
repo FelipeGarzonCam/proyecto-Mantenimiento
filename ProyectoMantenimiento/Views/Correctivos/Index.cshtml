@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ProyectoMantenimiento.Dominio.Entidades.Mantenimiento>
+@using ProyectoMantenimiento.Aplicacion.Helpers
+@using ProyectoMantenimiento.Dominio.Enums
+
+@{
+    ViewData["Title"] = "Mantenimiento Correctivo – " + ViewBag.Periodo;
+    Layout = "_Layout";
+    var periodoActual = (Periodicidad)Enum.Parse(typeof(Periodicidad), ViewBag.Periodo.ToString());
+}
+
+<div class="mb-3">
+    <ul class="nav nav-pills">
+        @foreach (Periodicidad per in Enum.GetValues(typeof(Periodicidad)))
+        {
+            <li class="nav-item">
+                <a asp-action="Index"
+                   asp-route-periodo="@per"
+                   class="nav-link @(per == periodoActual ? "active" : "")">
+                    @per
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+
+<div class="card card-primary">
+    <div class="card-header d-flex justify-content-between">
+        <h3 class="card-title"><i class="fas fa-tools"></i> Correctivo – @ViewBag.Periodo</h3>
+        <a asp-action="Print" asp-route-periodo="@ViewBag.Periodo" class="btn btn-danger">
+            <i class="fas fa-file-pdf"></i> PDF
+        </a>
+    </div>
+    <div class="card-body">
+        <partial name="~/Views/Shared/_TablaMantenimientos.cshtml" model="Model" />
+    </div>
+</div>

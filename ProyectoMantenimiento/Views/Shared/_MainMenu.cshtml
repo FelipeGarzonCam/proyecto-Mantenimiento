@@ -16,43 +16,16 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                
-
-                @* <!-- Módulo de Administración -->
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-cogs"></i>
-                        <p>
-                            Administración
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/Usuarios" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Usuarios</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/Roles" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Roles</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/Configuracion" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Configuración</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li> *@
-
                 <!-- Módulo de Mantenimiento -->
                 <li class="nav-item">
+                    <a href="/Equipos" class="nav-link">
+                        <i class="fa-solid fa-gears nav-icon"></i>
+                        <p>Equipos</p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tools"></i>
+                        <i class="nav-icon fas fa-toolbox"></i>
                         <p>
                             Mantenimiento
                             <i class="fas fa-angle-left right"></i>
@@ -60,25 +33,26 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/Equipos" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Equipos</p>
+                            <a asp-controller="Correctivos" asp-action="Index" class="nav-link">
+                                <i class="nav-icon fas fa-tools text-danger"></i><p>Correctivo</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/Ordenes" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Órdenes de Trabajo</p>
+                            <a asp-controller="Preventivos" asp-action="Index" class="nav-link">
+                                <i class="nav-icon fas fa-cogs text-warning"></i><p>Preventivo</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/Reportes" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Reportes</p>
+                            <a asp-controller="Predictivos" asp-action="Index" class="nav-link">
+                                <i class="nav-icon fas fa-chart-line text-success"></i><p>Predictivo</p>
                             </a>
                         </li>
                     </ul>
                 </li>
+
+
+                
+
 
                
             </ul>
