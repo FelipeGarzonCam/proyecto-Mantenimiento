@@ -1,0 +1,56 @@
+﻿@model ProyectoMantenimiento.Dominio.Entidades.Mantenimiento
+@{
+    ViewData["Title"] = "Detalle de mantenimiento";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="content-header">
+    <h1><i class="fas fa-search"></i> Detalle de mantenimiento</h1>
+    <small>Equipo: @Model.Equipo?.Nombre (@Model.Equipo?.CodigoInterno)</small>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card card-info">
+                <div class="card-header">
+                    <h3 class="card-title">Información registrada</h3>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-4">Fecha</dt>
+                        <dd class="col-sm-8">
+                            @Model.Fecha.ToString("dd-MM-yyyy HH:mm")
+                        </dd>
+
+                        <dt class="col-sm-4">Tipo</dt>
+                        <dd class="col-sm-8">@Model.Tipo</dd>
+
+                        <dt class="col-sm-4">OT</dt>
+                        <dd class="col-sm-8">@Model.OtNumero</dd>
+
+                        <dt class="col-sm-4">Trabajo realizado</dt>
+                        <dd class="col-sm-8">@Model.TrabajoRealizado</dd>
+
+                        <dt class="col-sm-4">Costo total</dt>
+                        <dd class="col-sm-8">
+                            @(Model.CostoTotal.HasValue
+                                ? Model.CostoTotal.Value.ToString("C0")
+                                : "—")
+                        </dd>
+
+                        <dt class="col-sm-4">Observaciones</dt>
+                        <dd class="col-sm-8">@Model.Descripcion</dd>
+                    </dl>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Equipos" asp-action="Details"
+                       asp-route-id="@Model.EquipoId"
+                       class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Volver a equipo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

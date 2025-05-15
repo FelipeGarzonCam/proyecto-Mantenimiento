@@ -21,57 +21,53 @@
                         <th>Cantidad</th>
                         <th class="text-center">Acciones</th>  
                     </tr>
-                </thead>
-
-                <tbody>
+                </thead>              
                 <tbody>
                         @foreach (var e in Model)
                         {
-                        <tr>
-                            <td>@e.EquipoId</td>
-                            <td>@e.Nombre</td>
-                            <td>@e.Descripcion</td>
-                            <td>@e.Cantidad</td>
-                            <td class="text-center">
-                                <!-- Ver detalles -->
-                                <a asp-action="Details" asp-route-id="@e.EquipoId"
-                                   class="btn btn-info btn-sm"
-                                   title="Visualizar detalles"
-                                   data-toggle="tooltip" data-placement="top">
-                                    <i class="fa fa-eye"></i>
-                                </a>
+                            <tr>
+                                <td>@e.EquipoId</td>
+                                <td>@e.Nombre</td>
+                                <td>@e.Descripcion</td>
+                                <td>@e.Cantidad</td>
+                                <td class="text-center">
+                                    <!-- Ver detalles -->
+                                    <a asp-action="Details" asp-route-id="@e.EquipoId"
+                                       class="btn btn-info btn-sm"
+                                       title="Visualizar detalles"
+                                       data-toggle="tooltip" data-placement="top">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
 
-                                <!-- Nuevo mantenimiento -->
-                                <a asp-controller="Mantenimientos" asp-action="Create"
-                                   asp-route-equipoId="@e.EquipoId"
-                                   class="btn btn-success btn-sm"
-                                   title="Crear registro de mantenimiento"
-                                   data-toggle="tooltip" data-placement="top">
-                                    <i class="fa fa-wrench"></i>
-                                </a>
+                                    <!-- Nuevo mantenimiento -->
+                                    <a asp-controller="Mantenimientos" asp-action="Create"
+                                       asp-route-equipoId="@e.EquipoId"
+                                       class="btn btn-success btn-sm"
+                                       title="Crear registro de mantenimiento"
+                                       data-toggle="tooltip" data-placement="top">
+                                        <i class="fa fa-wrench"></i>
+                                    </a>
 
-                                <!-- Editar -->
-                                <a asp-action="Edit" asp-route-id="@e.EquipoId"
-                                   class="btn btn-warning btn-sm"
-                                   title="Editar equipo"
-                                   data-toggle="tooltip" data-placement="top">
-                                    <i class="fa fa-edit"></i>
-                                </a>
+                                    <!-- Editar -->
+                                    <a asp-action="Edit" asp-route-id="@e.EquipoId"
+                                       class="btn btn-warning btn-sm"
+                                       title="Editar equipo"
+                                       data-toggle="tooltip" data-placement="top">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
 
-                                <!-- Eliminar -->
-                                <a asp-action="Delete" asp-route-id="@e.EquipoId"
-                                   class="btn btn-danger btn-sm"
-                                   title="Eliminar equipo"
-                                   data-toggle="tooltip" data-placement="top"
-                                   onclick="return confirm('¿Seguro de eliminar?');">
-                                    <i class="fa fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
+                                    <!-- Eliminar -->
+                                    <a asp-action="Delete" asp-route-id="@e.EquipoId"
+                                       class="btn btn-danger btn-sm"
+                                       title="Eliminar equipo"
+                                       data-toggle="tooltip" data-placement="top"
+                                       onclick="return confirm('¿Seguro de eliminar?');">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
                         }
-                </tbody>
-
-                </tbody>
+                </tbody>               
             </table>
         </div>
     </div>
