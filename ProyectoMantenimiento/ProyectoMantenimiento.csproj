@@ -10,6 +10,8 @@
 		<ProjectReference Include="..\Dominio\Dominio.csproj" />
 		<ProjectReference Include="..\Persistencia\Persistencia.csproj" />
 		<PackageReference Include="EntityFramework" Version="6.5.1" />
+		<PackageReference Include="itext7" Version="7.2.5" />
+		<PackageReference Include="Microsoft.jQuery.Unobtrusive.Validation" Version="4.0.0" />
 
 	</ItemGroup>
 </Project>

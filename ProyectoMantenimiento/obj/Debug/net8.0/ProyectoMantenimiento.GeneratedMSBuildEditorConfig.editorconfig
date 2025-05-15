@@ -36,6 +36,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBvc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Felip/OneDrive - Universidad Santo Tomás/2025 i/Tecnicas Lap/ProyectoMantenimiento/Views/Equipos/_HojaDeVida.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBvc1xfSG9qYURlVmlkYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Felip/OneDrive - Universidad Santo Tomás/2025 i/Tecnicas Lap/ProyectoMantenimiento/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -54,6 +58,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Felip/OneDrive - Universidad Santo Tomás/2025 i/Tecnicas Lap/ProyectoMantenimiento/Views/Mantenimientos/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudGVuaW1pZW50b3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Felip/OneDrive - Universidad Santo Tomás/2025 i/Tecnicas Lap/ProyectoMantenimiento/Views/Mantenimientos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudGVuaW1pZW50b3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Felip/OneDrive - Universidad Santo Tomás/2025 i/Tecnicas Lap/ProyectoMantenimiento/Views/Shared/Error.cshtml]

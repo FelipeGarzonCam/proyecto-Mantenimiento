@@ -1,79 +1,98 @@
 ﻿@model ProyectoMantenimiento.Dominio.Entidades.Equipo
 @{
-    ViewData["Title"] = "Registrar Equipo";
+    ViewData["Title"] = "Nuevo Equipo";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <section class="content-header">
-    <h1>Equipos <small>Nuevo</small></h1>
+    <h1><i class="fas fa-tools"></i> Registrar Equipo</h1>
 </section>
-@if (ViewBag.ErroresBinding != null)
-{
-    <div class="alert alert-danger">
-        <ul>
-            @foreach (string err in (List<string>)ViewBag.ErroresBinding)
-            {
-                <li>@err</li>
-            }
-        </ul>
-    </div>
-}
-
-@if (ViewBag.ErrorAlGuardar != null)
-{
-    <div class="alert alert-danger">
-        <strong>Error al guardar:</strong> @ViewBag.ErrorAlGuardar
-    </div>
-}
-
 
 <section class="content">
-    <div class="box box-success">
-        <div class="box-header with-border">
-            <h3 class="box-title">Formulario</h3>
-        </div>
-        <div class="box-body">
-            <!-- Único form, con Tag Helpers -->
-            <form asp-action="Create" asp-controller="Equipos" method="post" class="form-horizontal">
-                @Html.AntiForgeryToken()
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                <div class="form-group row">
-                    <label asp-for="Nombre" class="col-sm-2 col-form-label"></label>
-                    <div class="col-sm-10">
-                        <input asp-for="Nombre" class="form-control" />
-                        <span asp-validation-for="Nombre" class="text-danger"></span>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-primary">
+                    <div class="card-header"><h3 class="card-title">Tarjeta maestra</h3></div>
+                    <div class="card-body">
+                        @* 1ª columna *@
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.CodigoInterno)
+                            @Html.TextBoxFor(m => m.CodigoInterno, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.CodigoInterno)
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Nombre)
+                            @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Nombre)
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Marca)
+                            @Html.TextBoxFor(m => m.Marca, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Modelo)
+                            @Html.TextBoxFor(m => m.Modelo, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.NumeroSerie)
+                            @Html.TextBoxFor(m => m.NumeroSerie, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.FechaAdquisicion)
+                            @Html.TextBoxFor(m => m.FechaAdquisicion, "{0:yyyy-MM-dd}",
+                                     new { @class = "form-control", type = "date" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Ubicacion)
+                            @Html.TextBoxFor(m => m.Ubicacion, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.PotenciaHP)
+                            @Html.TextBoxFor(m => m.PotenciaHP, new { @class = "form-control", type = "number", step = "0.1" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Capacidad)
+                            @Html.TextBoxFor(m => m.Capacidad, new { @class = "form-control", type = "number", step = "0.1" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.PesoKg)
+                            @Html.TextBoxFor(m => m.PesoKg, new { @class = "form-control", type = "number", step = "0.1" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Criticidad)
+                            @Html.DropDownListFor(m => m.Criticidad,
+                                     new SelectList(new[] { "Crítico", "Urgente", "Normal" }),
+                                     "- Seleccione -", new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Cantidad)
+                            @Html.TextBoxFor(m => m.Cantidad,
+                                     new { @class = "form-control", type = "number", min = "1" })
+                            @Html.ValidationMessageFor(m => m.Cantidad)
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Descripcion)
+                            @Html.TextAreaFor(m => m.Descripcion, 3, 60, new { @class = "form-control" })
+                        </div>
                     </div>
-                </div>
-
-                <div class="form-group row">
-                    <label asp-for="Descripcion" class="col-sm-2 col-form-label"></label>
-                    <div class="col-sm-10">
-                        <textarea asp-for="Descripcion" class="form-control" rows="3"></textarea>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label asp-for="Cantidad" class="col-sm-2 col-form-label"></label>
-                    <div class="col-sm-10">
-                        <input asp-for="Cantidad" type="number" class="form-control" />
-                        <span asp-validation-for="Cantidad" class="text-danger"></span>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <div class="col-sm-offset-2 col-sm-10">
+                    <div class="card-footer">
                         <button type="submit" class="btn btn-success">
-                            <i class="fa fa-save"></i> Guardar
+                            <i class="fas fa-save"></i> Guardar
                         </button>
-                        <a asp-action="Index" class="btn btn-default">Cancelar</a>
+                        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
-    </div>
+    }
 </section>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+    @* Activa validaciones lado-cliente *@
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

@@ -1,0 +1,24 @@
+﻿@model ProyectoMantenimiento.Dominio.Entidades.Equipo
+<table class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>No. OT</th>
+            <th>Tipo</th>
+            <th>Trabajo / Descripción</th>
+            <th>Costo (USD)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model.Mantenimientos.OrderByDescending(x => x.Fecha))
+        {
+            <tr>
+                <td>@m.Fecha:dd-MM-yyyy</td>
+                <td>@m.OtNumero</td>
+                <td>@m.Tipo</td>
+                <td>@m.TrabajoRealizado</td>
+                <td>@m.CostoTotal?.ToString("N2")</td>
+            </tr>
+        }
+    </tbody>
+</table>

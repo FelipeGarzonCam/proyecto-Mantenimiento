@@ -1,101 +1,160 @@
-﻿@model ProyectoMantenimiento.Dominio.ViewModels.EquipoDetalleVM
+﻿@model ProyectoMantenimiento.Dominio.Entidades.Equipo
 @{
-    ViewData["Title"] = "Detalles del equipo";
+    ViewData["Title"] = "Hoja de vida – " + Model.Nombre;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="card">
-    <!-- Encabezado del equipo -->
-    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-        <h5 class="mb-0">@Model.Equipo.Nombre</h5>
-        <a asp-action="Edit"
-           asp-route-id="@Model.Equipo.EquipoId"
-           class="btn btn-warning btn-sm">
-            <i class="fa fa-edit"></i> Editar
-        </a>
-    </div>
-
-    <div class="card-body">
-        <!-- Datos generales y hoja de vida -->
-        <div class="row">
-            <div class="col-md-6">
-                <h6 class="text-muted">Datos generales</h6>
-                <p><strong>ID:</strong> @Model.Equipo.EquipoId</p>
-                <p><strong>Descripción:</strong> @Model.Equipo.Descripcion</p>
-                <p><strong>Cantidad:</strong> @Model.Equipo.Cantidad</p>
-            </div>
-            <div class="col-md-6">
-                <h6 class="text-muted">Hoja de vida</h6>
-                @if (Model.HojaVida is null)
-                {
-                    <p class="text-danger">Sin hoja de vida registrada.</p>
-                }
-                else
-                {
-                    <p><strong>Marca:</strong> @Model.HojaVida.Marca</p>
-                    <p><strong>Modelo:</strong> @Model.HojaVida.Modelo</p>
-                    <p><strong>N.º Serie:</strong> @Model.HojaVida.NumeroSerie</p>
-                    <p><strong>Ubicación:</strong> @Model.HojaVida.Ubicacion</p>
-                    <p><strong>Responsable:</strong> @Model.HojaVida.Responsable</p>
-                    <p>
-                        <strong>Fecha registro:</strong>
-                        @Model.HojaVida.FechaRegistro.ToString("yyyy-MM-dd")
-                    </p>
-                }
-            </div>
+<section class="content-header mb-3">
+    <h1><i class="fas fa-id-card-alt"></i> Hoja de vida del equipo
+        <div class="float-right">
+            <a asp-action="ExportPdf" asp-route-id="@Model.EquipoId"
+               class="btn btn-danger btn-sm"><i class="fas fa-file-pdf"></i> Exportar PDF</a>
+            <a asp-action="Index" class="btn btn-secondary btn-sm">Volver</a>
         </div>
+    </h1>
+    
+</section>
 
-        <hr />
-
-        <!-- Botón y contador de mantenimientos -->
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h4 class="mb-0">
-                Mantenimientos Realizados = @Model.ListaMantenimientos.Count()
-            </h4>
-            <a asp-controller="Mantenimientos"
-               asp-action="Create"
-               asp-route-equipoId="@Model.Equipo.EquipoId"
-               class="btn btn-primary btn-sm">
-                <i class="fa fa-plus"></i> Nuevo Mantenimiento
+<section class="content">
+    <div class="card card-primary ">
+        <div class="card-header d-flex align-items-center">
+            <h3 class="card-title mb-0">TARJETA MAESTRA</h3>
+            <!-- ms-auto empuja el enlace al extremo derecho -->
+            <a asp-action="Edit"
+               asp-route-id="@Model.EquipoId"
+               class="btn btn-warning btn-sm ms-auto">
+                <i class="fa fa-edit"></i> Editar
             </a>
         </div>
 
-        <!-- (Se conserva) Título adicional de mantenimientos -->
-        @* <h4>(@Model.ListaMantenimientos.Count())</h4> *@
 
-        @if (!Model.ListaMantenimientos.Any())
-        {
-            <p class="text-success">Este equipo aún no tiene mantenimientos registrados.</p>
-        }
-        else
-        {
-            <table class="table table-bordered dataTables_wrapper">
+        
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Código interno</dt>
+                <dd class="col-sm-9">@Model.CodigoInterno</dd>
+
+                <dt class="col-sm-3">Nombre</dt>
+                <dd class="col-sm-9">@Model.Nombre</dd>
+
+                <dt class="col-sm-3">Marca / Modelo</dt>
+                <dd class="col-sm-9">@Model.Marca / @Model.Modelo</dd>
+
+                <dt class="col-sm-3">Serie</dt>
+                <dd class="col-sm-9">@Model.NumeroSerie</dd>
+
+                <dt class="col-sm-3">Fecha adquisición</dt>
+                <dd class="col-sm-9">
+                    @(Model.FechaAdquisicion.HasValue
+                        ? Model.FechaAdquisicion.Value.ToString("dd-MM-yyyy")
+                        : "—")
+                </dd>
+
+                <dt class="col-sm-3">Ubicación</dt>
+                <dd class="col-sm-9">@Model.Ubicacion</dd>
+
+                <dt class="col-sm-3">Potencia (HP)</dt>
+                <dd class="col-sm-9">@Model.PotenciaHP</dd>
+
+                <dt class="col-sm-3">Capacidad</dt>
+                <dd class="col-sm-9">@Model.Capacidad</dd>
+
+                <dt class="col-sm-3">Peso (kg)</dt>
+                <dd class="col-sm-9">@Model.PesoKg</dd>
+
+                @{
+                    string badgeClass = Model.Criticidad switch
+                    {
+                        "Crítico" => "badge-danger",
+                        "Urgente" => "badge-warning",
+                        "Normal" => "badge-info",
+                        _ => "badge-info"
+                    };
+                }
+
+                <dt class="col-sm-3">Criticidad</dt>
+                <dd class="col-sm-9">
+                    <span class="badge @badgeClass">@Model.Criticidad</span>
+                </dd>
+
+
+                <dt class="col-sm-3">Descripción</dt>
+                <dd class="col-sm-9">@Model.Descripcion</dd>
+            </dl>
+        </div>
+        <div class="card-footer">
+            <a asp-action="Index" class="btn btn-info">
+                <i class="fa fa-arrow-left"></i> Volver
+            </a>
+            <div class="float-right">
+                <!-- Botones anterior/siguiente -->
+                @{
+                    int? prev = ViewBag.PreviousId as int?;
+                    int? next = ViewBag.NextId as int?;
+                }
+                @if (prev.HasValue)
+                {
+                    <a asp-action="Details" asp-route-id="@prev.Value"
+                       class="btn btn-outline-info  btn">
+                        <i class="fas fa-arrow-left"></i> Anterior
+                    </a>
+                }
+                @if (next.HasValue)
+                {
+                    <a asp-action="Details" asp-route-id="@next.Value"
+                       class="btn btn-outline-info btn">
+                        Siguiente <i class="fas fa-arrow-right"></i>
+                    </a>
+                }
+                </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Historial de mantenimientos</h3>
+            <div class="card-tools">
+                <a asp-controller="Mantenimientos" asp-action="Create"
+                   asp-route-equipoId="@Model.EquipoId"
+                   class="btn btn-success btn">
+                    <i class="fas fa-plus"></i> Nuevo Mantenimiento
+                </a>
+            </div>
+        </div>
+        <div class="card-body table-responsive p-0">
+            <table class="table table-hover">
                 <thead>
                     <tr>
                         <th>Fecha</th>
-                        <th>Responsable</th>
                         <th>Tipo</th>
-                        <th>Notas</th>
+                        <th>OT</th>
+                        <th>Trabajo realizado</th>
+                        <th>Costo</th>
+                        <th>Obs.</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var m in Model.ListaMantenimientos)
+                    @foreach (var m in Model.Mantenimientos.OrderByDescending(x => x.Fecha))
                     {
                         <tr>
-                            <td>@m.Fecha.ToString("yyyy-MM-dd")</td>
-                            <td>@m.Responsable</td>
+                            <td>@m.Fecha.ToString("dd-MM-yyyy HH:mm")</td>
                             <td>@m.Tipo</td>
-                            <td>@m.Notas</td>
+                            <td>@m.OtNumero</td>
+                            <td>@m.TrabajoRealizado</td>
+                            <td>@m.CostoTotal?.ToString("C0")</td>
+                            <td>@m.Descripcion</td>
+                            <td>
+                                <a asp-controller="Mantenimientos" asp-action="Details"
+                                   asp-route-id="@m.MantenimientoId" class="text-info">
+                                    <i class="fas fa-search"></i>
+                                </a>
+                            </td>
                         </tr>
                     }
                 </tbody>
             </table>
-        }
-    </div>
 
-    <!-- Pie de la tarjeta -->
-    <div class="card-footer">
-        <a asp-action="Index" class="btn btn-info">
-            <i class="fa fa-arrow-left"></i> Volver
-        </a>
+        </div>
     </div>
-</div>
+</section>

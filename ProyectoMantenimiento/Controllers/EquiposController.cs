@@ -4,6 +4,13 @@ using ProyectoMantenimiento.Persistencia;
 using ProyectoMantenimiento.Dominio.Entidades;
 using Microsoft.AspNetCore.Mvc;
 using ProyectoMantenimiento.Dominio.ViewModels;
+using System.Reflection.Metadata;
+
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
+using Doc = iText.Layout.Document;
 
 namespace ProyectoMantenimiento.Controllers
 {
@@ -20,60 +27,86 @@ namespace ProyectoMantenimiento.Controllers
 
         // GET: /Equipos/Create
         public IActionResult Create() => View();
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+
+        // POST: /Equipos/Create
+        [HttpPost, ValidateAntiForgeryToken]
         public IActionResult Create(Equipo equipo)
         {
-            // 1) Registrar valores vinculados para comprobar binding
-            System.Diagnostics.Debug.WriteLine($"[DEBUG] Equipo recibido: Nombre={equipo.Nombre}, Descripcion={equipo.Descripcion}, Cantidad={equipo.Cantidad}");
+            if (!ModelState.IsValid) return View(equipo);
 
-            // 2) Si ModelState falla, volcamos todos los errores al ViewBag
-            if (!ModelState.IsValid)
-            {
-                var errores = ModelState
-                    .SelectMany(ms => ms.Value.Errors.Select(err => err.ErrorMessage))
-                    .ToList();
-                ViewBag.ErroresBinding = errores;
-                return View(equipo);
-            }
+            _ctx.Equipos.Add(equipo);
+            _ctx.SaveChanges();
 
-            try
-            {
-                _ctx.Equipos.Add(equipo);
-                _ctx.SaveChanges();
-                return RedirectToAction(nameof(Index));
-            }
-            catch (Exception ex)
-            {
-                // 3) Si hay excepción, la guardamos en ViewBag
-                ViewBag.ErrorAlGuardar = ex.GetBaseException().Message;
-                return View(equipo);
-            }
+            // Redirigimos a la vista para crear mantenimiento del mismo equipo
+            return RedirectToAction("Create", "Mantenimientos", new { equipoId = equipo.EquipoId });
         }
 
         // GET: /Equipos/Details/5
         public IActionResult Details(int id)
         {
-            var equipo = _ctx.Equipos.Find(id);
+            // 1) Carga el equipo con sus mantenimientos
+            var equipo = _ctx.Equipos
+                             .Include(e => e.Mantenimientos)
+                             .FirstOrDefault(e => e.EquipoId == id);
             if (equipo == null) return NotFound();
 
-            var hoja = _ctx.HojaVidaEquipos.FirstOrDefault(h => h.EquipoId == id);
+            // 2) Obtiene la lista ordenada de todos los IDs
+            var allIds = _ctx.Equipos
+                             .OrderBy(e => e.EquipoId)
+                             .Select(e => e.EquipoId)
+                             .ToList();
 
-            var mantenimientos = _ctx.Mantenimientos
-                                      .Where(m => m.EquipoId == id)
-                                      .OrderByDescending(m => m.Fecha)
-                                      .ToList();
+            // 3) Calcula la posición actual
+            var idx = allIds.IndexOf(id);
 
-            var vm = new EquipoDetalleVM
-            {
-                Equipo = equipo,
-                HojaVida = hoja,
-                ListaMantenimientos = mantenimientos
-            };
+            // 4) Determina PreviousId y NextId o deja null
+            ViewBag.PreviousId = idx > 0 ? allIds[idx - 1] : (int?)null;
+            ViewBag.NextId = idx < allIds.Count - 1 ? allIds[idx + 1] : (int?)null;
 
-            return View(vm);
+            return View(equipo);
         }
 
+        [HttpGet]
+        public IActionResult ExportPdf(int id)
+        {
+            var equipo = _ctx.Equipos
+                             .Include(e => e.Mantenimientos)
+                             .FirstOrDefault(e => e.EquipoId == id);
+            if (equipo == null) return NotFound();
+
+            using var ms = new MemoryStream();
+            var writer = new PdfWriter(ms);                                     // ejemplo iText 7 :contentReference[oaicite:4]{index=4}
+            var pdf = new PdfDocument(writer);                               // ctor con writer :contentReference[oaicite:5]{index=5}
+            using var doc = new Doc(pdf);                                    // aliasado
+
+            doc.Add(new Paragraph("Hoja de vida del equipo").SetBold().SetFontSize(16));
+            doc.Add(new Paragraph($"Código interno: {equipo.CodigoInterno}"));
+            doc.Add(new Paragraph($"Nombre: {equipo.Nombre}"));
+            doc.Add(new Paragraph($"Marca / Modelo: {equipo.Marca} / {equipo.Modelo}"));
+            doc.Add(new Paragraph($"Serie: {equipo.NumeroSerie}"));
+            doc.Add(new Paragraph($"Ubicación: {equipo.Ubicacion}"));
+            doc.Add(new Paragraph($"Criticidad: {equipo.Criticidad}"));
+            doc.Add(new Paragraph(" "));
+
+            var table = new Table(6).UseAllAvailableWidth();
+            table.AddHeaderCell("Fecha").AddHeaderCell("Tipo").AddHeaderCell("OT")
+                 .AddHeaderCell("Trabajo").AddHeaderCell("Costo").AddHeaderCell("Obs.");
+
+            foreach (var m in equipo.Mantenimientos.OrderByDescending(x => x.Fecha))
+            {
+                table.AddCell(m.Fecha.ToString("dd-MM-yyyy"));
+                table.AddCell(m.Tipo);
+                table.AddCell(m.OtNumero ?? "");
+                table.AddCell(m.TrabajoRealizado ?? "");
+                table.AddCell(m.CostoTotal?.ToString("C0") ?? "");
+                table.AddCell(m.Descripcion ?? "");
+            }
+            doc.Add(table);
+            doc.Close();                                                        // método correcto :contentReference[oaicite:6]{index=6}
+
+            return File(ms.ToArray(), "application/pdf",
+                        $"HojaVida_{equipo.CodigoInterno}.pdf");
+        }
 
         protected override void Dispose(bool disposing)
         {
