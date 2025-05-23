@@ -32,7 +32,7 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                                <li class="breadcrumb-item"><a href="@Url.Action("Index", "Equipos")">Inicio</a></li>
                                 <li class="breadcrumb-item active">@ViewData["Title"]</li>
                             </ol>
                         </div>
@@ -78,6 +78,56 @@
 <script>
     // Inicializa todos los tooltips de la página
     $(function () {
-      $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
+    // Función para alternar dark-mode
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        // Actualizar icono
+        var icono = document.getElementById('icon-darkmode');
+        if (icono) {
+            icono.className = document.body.classList.contains('dark-mode') ? 'fas fa-sun' : 'fas fa-moon';
+        }
+        // Guardar preferencia
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode') ? 'true' : 'false');
+        // Actualizar las tablas
+        actualizarTablasModo();
+    }
+
+    // Función que actualiza las tablas según el modo
+    function actualizarTablasModo() {
+        var tablas = document.querySelectorAll('.table');
+        tablas.forEach(function(tabla) {
+            if (document.body.classList.contains('dark-mode')) {
+                tabla.classList.remove('table-striped');
+            } else {
+                tabla.classList.add('table-striped');
+            }
+        });
+    }
+
+    // Cargar preferencia de dark mode al cargar la página
+    window.addEventListener('DOMContentLoaded', function() {
+        // Dark mode al cargar
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            var icono = document.getElementById('icon-darkmode');
+            if (icono) icono.className = 'fas fa-sun';
+        } else {
+            document.body.classList.remove('dark-mode');
+            var icono = document.getElementById('icon-darkmode');
+            if (icono) icono.className = 'fas fa-moon';
+        }
+
+        // Inicializa el evento del botón si existe
+        var btnDark = document.getElementById('toggle-darkmode');
+        if (btnDark) {
+            btnDark.addEventListener('click', toggleDarkMode);
+        }
+
+        // Aplica el modo a las tablas al cargar
+        actualizarTablasModo();
     });
 </script>
+
